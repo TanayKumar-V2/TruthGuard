@@ -1,0 +1,38 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --background: 210 44% 98%;
+    --foreground: 216 46% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 216 46% 12%;
+    --primary: 212 100% 43%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 50% 95%;
+    --secondary-foreground: 216 40% 18%;
+    --muted: 210 46% 95%;
+    --muted-foreground: 215 20% 40%;
+    --accent: 205 92% 94%;
+    --accent-foreground: 212 100% 30%;
+    --destructive: 0 75% 48%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 212 100% 43%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.14), transparent 34%),
+      radial-gradient(circle at 100% 100%, rgba(14, 165, 233, 0.12), transparent 36%);
+    min-height: 100vh;
+  }
+}
