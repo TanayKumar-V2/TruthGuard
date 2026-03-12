@@ -1,31 +1,7 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
 import { FeedbackAction, FeedbackRecord, FeedbackSummary } from "@/lib/analysis-types";
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const FEEDBACK_FILE = path.join(DATA_DIR, "feedback-log.json");
-
-async function ensureFeedbackFile() {
-  await mkdir(DATA_DIR, { recursive: true });
-
-  try {
-    await readFile(FEEDBACK_FILE, "utf8");
-  } catch {
-    await writeFile(FEEDBACK_FILE, "[]", "utf8");
-  }
-}
-
-async function readFeedbackRecords() {
-  await ensureFeedbackFile();
-  const raw = await readFile(FEEDBACK_FILE, "utf8");
-
-  try {
-    const parsed = JSON.parse(raw) as FeedbackRecord[];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
+// Vercel has a read-only filesystem - we use in-memory storage instead
+const feedbackStore = new Map<string, FeedbackRecord[]>();
 
 function summarizeFeedback(records: FeedbackRecord[], analysisId: string): FeedbackSummary {
   return records.reduce(
@@ -41,19 +17,18 @@ function summarizeFeedback(records: FeedbackRecord[], analysisId: string): Feedb
 }
 
 export async function recordFeedback(analysisId: string, action: FeedbackAction) {
-  const records = await readFeedbackRecords();
+  const existing = feedbackStore.get(analysisId) ?? [];
   const nextRecord: FeedbackRecord = {
     analysisId,
     action,
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   };
-
-  records.push(nextRecord);
-  await writeFile(FEEDBACK_FILE, JSON.stringify(records, null, 2), "utf8");
-  return summarizeFeedback(records, analysisId);
+  const updated = [...existing, nextRecord];
+  feedbackStore.set(analysisId, updated);
+  return summarizeFeedback(updated, analysisId);
 }
 
-export async function getFeedbackSummary(analysisId: string) {
-  const records = await readFeedbackRecords();
+export async function getFeedbackSummary(analysisId: string): Promise<FeedbackSummary> {
+  const records = feedbackStore.get(analysisId) ?? [];
   return summarizeFeedback(records, analysisId);
 }
