@@ -1,0 +1,141 @@
+{
+  "key": "a3f4e83f767ab00fe13a49d4f84cf07953f1b0491b8936c840d42574728794d8",
+  "created_at": 1773688080.3308573,
+  "expires_at": 1773688980.3308573,
+  "payload": {
+    "analysis": {
+      "trustScore": 93,
+      "manipulationLevel": "LOW",
+      "summary": "The source excerpt claims that India won the T20 World Cup in 2026, according to the ICC. This claim is strongly supported by multiple reliable sources, including Wikipedia, Economic Times, Outlook India, and icc-cricket.com, all stating that India co-hosted and won the tournament against New Zealand, claiming their third title.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Cross-reference sports results with official sports organization websites (e.g., ICC) or reputable sports news outlets.",
+        "Check the dates of the tournament and the final results to ensure accuracy.",
+        "Look for multiple independent sources confirming the same outcome."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "according to ICC India won t20 world cup in 2026",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "wikipedia.org",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBL6I1TSUuSK5ANKs6bYynvhDZ6emADXd8dZAEA1cqauBAiZC7VGMBj3nz6zqaeceBhXmcymSACpW6rTaHzjw2eGBgzxmE9gJXbGGBrkDyuDDMUNni7Ex8YfK5geNDB2DPBhLWJyL9uTe9h3iabX5JHx4_",
+              "verdict": "supporting",
+              "note": "Multiple sources confirm that India won the T20 World Cup in 2026, co-hosting it with Sri Lanka and defeating New Zealand in the final. The claim's attribution to ICC is also consistent with the official nature of the information. Context: The tournament was co-hosted by India and Sri Lanka from February 7 to March 8, 2026, and India defeated New Zealand in the final to claim their third"
+            },
+            {
+              "label": "economictimes.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdco82H_brpkLdpBmwIArS2HfRY2q6yza_5CJoWYs0q-b6gTVJRFqXUJOfJy33uF4h8oR_Tuu86Pbr8ZO0BzVcgJWsGu1uDrX8eSHfvYoHvZeqbRFJlYNJ6_MdFS315BEiPjAA4ZoEohzPXEIaxklhV7ViU3Yp1qRJSzn6_G7t20UNIFtn7ObdI5a8bXYVQJjLwNCP97i7HGIxaD1iDQ2LDJSg-dtKfH8spIhTOL5DHQkcyvn2qoGXp8ec98_OvV4w5Hg9oo9a57mpTwA=",
+              "verdict": "supporting",
+              "note": "Multiple sources confirm that India won the T20 World Cup in 2026, co-hosting it with Sri Lanka and defeating New Zealand in the final. The claim's attribution to ICC is also consistent with the official nature of the information. Context: The tournament was co-hosted by India and Sri Lanka from February 7 to March 8, 2026, and India defeated New Zealand in the final to claim their third"
+            },
+            {
+              "label": "outlookindia.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4gsJXpOkhD4bgJSz1yncsiIHfJc_ZtiUq6am5xseBiPCJ1NSUw0imZ3sDlihidUS5K6q2PUsv0iNlwP9MzgWcKzFj4fPfSbuldAAbwcDzzEKG_Lf4W35_s2Al_Zn84AAUpT9rWQ9pGXs2n_DnNlY1yKy1a8pxULc8BX01sOtL-cU9s7yvZAaKD3CDReWmGxs3nJS6-1p86dQskZye3zkP76VRc0f4NMpRMhvB_PsE5w7CMgIivEOQ0Zwc8NG-NN10Yf5UmUvn9VKs47iz1_18FrY=",
+              "verdict": "supporting",
+              "note": "Multiple sources confirm that India won the T20 World Cup in 2026, co-hosting it with Sri Lanka and defeating New Zealand in the final. The claim's attribution to ICC is also consistent with the official nature of the information. Context: The tournament was co-hosted by India and Sri Lanka from February 7 to March 8, 2026, and India defeated New Zealand in the final to claim their third"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 93,
+          "note": "The source excerpt claims that India won the T20 World Cup in 2026, according to the ICC. This claim"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 16950.48
+    }
+  }
+}

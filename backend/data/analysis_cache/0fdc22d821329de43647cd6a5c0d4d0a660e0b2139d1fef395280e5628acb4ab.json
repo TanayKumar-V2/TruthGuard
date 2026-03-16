@@ -1,0 +1,141 @@
+{
+  "key": "0fdc22d821329de43647cd6a5c0d4d0a660e0b2139d1fef395280e5628acb4ab",
+  "created_at": 1773688478.1010501,
+  "expires_at": 1773689378.1010501,
+  "payload": {
+    "analysis": {
+      "trustScore": 92,
+      "manipulationLevel": "LOW",
+      "summary": "The statement \"war is happening iran vs israel\" is accurate and strongly supported by multiple credible live web sources. The retrieved context confirms an ongoing conflict between Iran and Israel, which significantly escalated on February 28, 2026, and is reported as ongoing as of March 17, 2026.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Verify information about ongoing conflicts with multiple reputable news organizations and official government statements.",
+        "Check the dates of reports to ensure the information is current and reflects the latest developments.",
+        "Look for details regarding the nature and scale of the conflict, such as specific actions taken by each side."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "war is happening iran vs israel",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "wikipedia.org",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG34FzRcgpxqWRrgFV2-L8WeRouCPmkqlxLuTvklUCWJsn1P3WtKn3mji6t-3DRZlb5dLikaeb_dOXR41xPxvBzlMleBhMokWNViCJ94ZNiaUKmQSiHQ2bihUFfhfRIKC22shvBbw=",
+              "verdict": "supporting",
+              "note": "Multiple live web sources confirm that a conflict between Iran and Israel is ongoing as of March 17, 2026, with significant escalation reported on February 28, 2026. Context: The conflict significantly escalated on February 28, 2026, when the United States and Israel launched surprise airstrikes across Iran, killing Supreme"
+            },
+            {
+              "label": "cfr.org",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHytNrhSoItL5PxJ0Gu05HjcQVQCvBM_2XTbhuWFoZ9A6wSvKH6sXEOxO1Qh7yZnxD-TMQUc8i3gXkCPf9v8HijFJ5mLVa6mToSmVuvUVu2c8hZr0lwOJObjPUCX4MWg8PIqfCO97UzI1SDihN0zPI_It4vMnZhS0ClHmWqo92MbTx5JZXLwk-FnqAHPz_5GHQGVdt2scpsgwniNn0=",
+              "verdict": "supporting",
+              "note": "Multiple live web sources confirm that a conflict between Iran and Israel is ongoing as of March 17, 2026, with significant escalation reported on February 28, 2026. Context: The conflict significantly escalated on February 28, 2026, when the United States and Israel launched surprise airstrikes across Iran, killing Supreme"
+            },
+            {
+              "label": "britannica.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9nyeUAFAmdkig_YVzAYLsgzCFKXN4vjim7r_-KQOEb84HBCaiQXtFXBwQENJu6t41tqQNJ1LUMMK6Llm4tfkYuDAGkdj5IUv-bd67XyVgEgOy8jQDccnohT-lEyjTjv43EcxykkQE2b2hvZ1JKQ==",
+              "verdict": "supporting",
+              "note": "Multiple live web sources confirm that a conflict between Iran and Israel is ongoing as of March 17, 2026, with significant escalation reported on February 28, 2026. Context: The conflict significantly escalated on February 28, 2026, when the United States and Israel launched surprise airstrikes across Iran, killing Supreme"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 92,
+          "note": "The statement \"war is happening iran vs israel\" is accurate and strongly supported by multiple credi"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 16692.37
+    }
+  }
+}

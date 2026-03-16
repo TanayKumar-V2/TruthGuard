@@ -16,30 +16,6 @@ export interface ScoreBreakdownItem {
   summary: string;
 }
 
-export interface FactCheckMatch {
-  id: string;
-  source: string;
-  publisher: string;
-  publisherSite?: string;
-  title: string;
-  url: string;
-  reviewDate?: string;
-  claimText: string;
-  claimant?: string;
-  textualRating: string;
-  languageCode?: string;
-  verdict: EvidenceVerdict;
-  matchStrength: number;
-  note: string;
-}
-
-export interface OfficialSourceLink {
-  label: string;
-  source: string;
-  url: string;
-  description: string;
-}
-
 export interface EvidenceItem {
   label: string;
   source: string;
@@ -106,8 +82,6 @@ export interface AnalysisResult {
   extractedClaims: string[];
   sourceSignals: string[];
   scoreBreakdown: ScoreBreakdownItem[];
-  factChecks: FactCheckMatch[];
-  officialSourceLinks: OfficialSourceLink[];
   claimEvidence: ClaimEvidence[];
   flagInsights: FlagInsight[];
   scamRisk: ScamRiskAnalysis;

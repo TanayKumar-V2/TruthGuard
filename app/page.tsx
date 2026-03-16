@@ -44,10 +44,10 @@ import {
 import { cn } from "@/lib/utils";
 
 const ANALYSIS_STEPS = [
-  "Extracting Claims",
-  "Running Credibility Scorer",
-  "Detecting Manipulation",
-  "Checking Fact-Check Sources",
+  "Submitting to Backend",
+  "Retrieving RAG Context",
+  "Running Gemini Analysis",
+  "Building Result Payload",
 ] as const;
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -208,6 +208,7 @@ export default function HomePage() {
   const selectedInsight =
     analysis?.flagInsights.find((item) => item.tag === selectedInsightTag) ||
     null;
+  const primaryInsights = analysis?.flagInsights.slice(0, 3) || [];
 
   useEffect(() => {
     setSelectedInsightTag(analysis?.flagInsights[0]?.tag || null);
@@ -336,15 +337,14 @@ export default function HomePage() {
               </h1>
               <p className="max-w-3xl text-sm leading-relaxed text-slate-600">
                 Analyze social posts, forwarded messages, and links with live
-                heuristic scoring, external fact-check lookup, claim-level
-                evidence panels, scam screening, and explainable educational
-                guidance.
+                backend scoring from Gemini + RAG, claim-level evidence panels,
+                scam screening, and explainable educational guidance.
               </p>
             </div>
             <div className="rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-800">
               <p className="font-semibold">Expanded Analysis Stack</p>
               <p className="mt-1">
-                Trust score, fact-check sources, evidence buckets, scam mode,
+                Trust score, retrieval-backed evidence buckets, scam mode,
                 timeline, and feedback loop.
               </p>
             </div>
@@ -365,11 +365,11 @@ export default function HomePage() {
           <div className="rounded-xl border border-blue-100 bg-white p-4 shadow-sm">
             <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-blue-900">
               <Search className="h-4 w-4" />
-              Cross-Verify
+              Cross-Verify Evidence
             </h3>
             <p className="text-xs text-slate-600">
-              Search for the core claim on Google News or official fact-check
-              sites.
+              Compare the claim with reliable reporting and official primary
+              sources before sharing.
             </p>
           </div>
           <div className="rounded-xl border border-blue-100 bg-white p-4 shadow-sm">
@@ -392,7 +392,7 @@ export default function HomePage() {
             </CardTitle>
             <CardDescription>
               Submit text, a URL, or both. TruthGuard evaluates source quality,
-              manipulation signals, fraud risk, and live fact-check coverage.
+              manipulation signals, fraud risk, and backend RAG evidence.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -460,7 +460,7 @@ export default function HomePage() {
                 Running Analysis Pipeline
               </CardTitle>
               <CardDescription className="text-blue-700">
-                Preparing trust, evidence, and external source checks...
+                Preparing trust, retrieval context, and model scoring...
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -573,6 +573,91 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            <Card className="xl:col-span-3">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Flag className="h-5 w-5 text-blue-600" />
+                  Why It Was Flagged
+                </CardTitle>
+                <CardDescription>
+                  The strongest reasons the backend marked this post as risky.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {primaryInsights.length > 0 ? (
+                  <div className="space-y-3">
+                    {primaryInsights.map((insight) => (
+                      <button
+                        key={insight.tag}
+                        type="button"
+                        onClick={() => setSelectedInsightTag(insight.tag)}
+                        className={cn(
+                          "w-full rounded-2xl border p-4 text-left transition-colors",
+                          selectedInsightTag === insight.tag
+                            ? "border-blue-500 bg-blue-50"
+                            : "border-slate-200 bg-slate-50/80 hover:border-blue-200 hover:bg-blue-50/70",
+                        )}
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="space-y-2">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <Badge variant="outline">{insight.tag}</Badge>
+                              <Badge
+                                variant={
+                                  insight.severity === "high"
+                                    ? "danger"
+                                    : insight.severity === "medium"
+                                      ? "warning"
+                                      : "success"
+                                }
+                              >
+                                {insight.severity}
+                              </Badge>
+                            </div>
+                            <p className="text-sm font-semibold text-slate-900">
+                              {insight.reason}
+                            </p>
+                            <p className="text-sm text-slate-600">
+                              Verify next by: {insight.verificationStep}
+                            </p>
+                          </div>
+                        </div>
+                        {insight.matchedPhrases.length > 0 ? (
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {insight.matchedPhrases.map((phrase) => (
+                              <Badge key={phrase} variant="secondary">
+                                {phrase}
+                              </Badge>
+                            ))}
+                          </div>
+                        ) : null}
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="rounded-xl border bg-slate-50/80 p-4 text-sm text-slate-600">
+                    No specific fake or spam trigger was returned for this
+                    result.
+                  </div>
+                )}
+
+                {analysis.scamRisk.indicators.length > 0 ? (
+                  <div className="rounded-xl border bg-amber-50/70 p-4">
+                    <p className="text-sm font-semibold text-amber-900">
+                      Spam or scam indicators detected
+                    </p>
+                    <ul className="mt-2 space-y-2 text-sm text-amber-900">
+                      {analysis.scamRisk.indicators.slice(0, 3).map((item) => (
+                        <li key={item} className="rounded-md bg-white/80 p-2">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </CardContent>
             </Card>
 
@@ -764,103 +849,6 @@ export default function HomePage() {
                     <p className="mt-2 text-sm text-slate-600">{point.note}</p>
                   </div>
                 ))}
-              </CardContent>
-            </Card>
-
-            <Card className="xl:col-span-3">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <ScanSearch className="h-5 w-5 text-blue-600" />
-                  Fact-Check Sources
-                </CardTitle>
-                <CardDescription>
-                  Live matches and official source shortcuts for claim
-                  verification.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {analysis.factChecks.length > 0 ? (
-                  <div className="space-y-3">
-                    {analysis.factChecks.map((match) => (
-                      <div
-                        key={match.id}
-                        className="rounded-xl border bg-slate-50/80 p-4"
-                      >
-                        <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                          <div className="space-y-1">
-                            <div className="flex flex-wrap items-center gap-2">
-                              <Badge
-                                variant={verdictBadgeVariant(match.verdict)}
-                              >
-                                {match.textualRating}
-                              </Badge>
-                              <Badge variant="outline">{match.source}</Badge>
-                              <Badge variant="secondary">
-                                Match {match.matchStrength}%
-                              </Badge>
-                            </div>
-                            <p className="text-sm font-semibold text-slate-800">
-                              {match.title}
-                            </p>
-                            <p className="text-sm text-slate-600">
-                              {match.claimText}
-                            </p>
-                            <p className="text-xs text-slate-500">
-                              {match.reviewDate
-                                ? `Reviewed ${match.reviewDate}`
-                                : "Review date unavailable"}
-                              {match.claimant
-                                ? ` | Claimant: ${match.claimant}`
-                                : ""}
-                            </p>
-                          </div>
-                          <a
-                            href={match.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1 text-sm font-medium text-blue-700 hover:text-blue-800"
-                          >
-                            Open review
-                            <ExternalLink className="h-4 w-4" />
-                          </a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="rounded-xl border bg-slate-50/80 p-4 text-sm text-slate-600">
-                    No live fact-check matches were returned for this query. Use
-                    the official source shortcuts below to continue the
-                    verification path.
-                  </div>
-                )}
-
-                <div className="grid gap-3 md:grid-cols-3">
-                  {analysis.officialSourceLinks.map((link) => (
-                    <a
-                      key={link.url}
-                      href={link.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-xl border bg-white p-4 transition-colors hover:border-blue-200 hover:bg-blue-50/60"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <div>
-                          <p className="text-sm font-semibold text-slate-800">
-                            {link.label}
-                          </p>
-                          <p className="text-xs uppercase tracking-wide text-slate-500">
-                            {link.source}
-                          </p>
-                        </div>
-                        <ExternalLink className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <p className="mt-2 text-sm text-slate-600">
-                        {link.description}
-                      </p>
-                    </a>
-                  ))}
-                </div>
               </CardContent>
             </Card>
 

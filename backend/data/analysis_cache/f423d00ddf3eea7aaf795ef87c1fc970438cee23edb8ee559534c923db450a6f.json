@@ -1,0 +1,162 @@
+{
+  "key": "f423d00ddf3eea7aaf795ef87c1fc970438cee23edb8ee559534c923db450a6f",
+  "created_at": 1773688622.4643662,
+  "expires_at": 1773689522.4643662,
+  "payload": {
+    "analysis": {
+      "trustScore": 39,
+      "manipulationLevel": "HIGH",
+      "summary": "The claim that 'pm modi will tour pakistan in 2027' is contradicted by available information. While PM Modi might attend the Shanghai Cooperation Organisation (SCO) Summit in Pakistan in 2027, this is distinct from a bilateral 'tour'. Current reports from early 2026 indicate that India-Pakistan relations remain largely strained, and recent diplomatic discussions do not confirm a future prime ministerial tour.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Check official government announcements from both India and Pakistan regarding any confirmed bilateral visits.",
+        "Distinguish between attendance at multilateral events (like an SCO Summit) and a bilateral 'tour'.",
+        "Verify the current state of diplomatic relations between India and Pakistan from credible news sources.",
+        "Look for named sources, primary documents, and precise attribution.",
+        "Cross-check the claim with at least two reputable or primary sources."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 90,
+          "contribution": -90
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 80,
+          "contribution": -80
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 30,
+          "contribution": -30
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 10,
+          "contribution": 10
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "pm modi will tour pakistan in 2027",
+          "verdict": "contradicting",
+          "supporting": [],
+          "contradicting": [
+            {
+              "label": "youtube.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQITlW-H-YVk608j9ZLRCsBC16sSPBjiS6_7bPbrMeJmiLTSAzei3qh49IY8GGJV81wGDp5MdRVecUsXltorXpniuqxMZGsbJh_b3gzkdFVwe0qMwbMG0XCtOo2xpqE8SyOPAP0tc=",
+              "verdict": "contradicting",
+              "note": "While Pakistan is slated to host the Shanghai Cooperation Organisation (SCO) Summit in 2027, which could potentially involve PM Modi's attendance, this is explicitly stated to be distinct from a bilateral 'tour'. Current reports from early 2026 indicate that India-Pakistan relations remain largely strained, and recent diplomatic discussions do not confirm a future prime ministerial tour. Context: While Pakistan is slated to host the Shanghai Cooperation Organisation (SCO) Summit in 2027, which could potentially involve PM Modi's attendance, thi"
+            },
+            {
+              "label": "oreateai.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKpzQoTnxW-BUBai-6QJGi62KYUtrnDUfWTRtVIqFDbLBLYxBoAKh3Msep45EE_DFiy37rp6uCmC32NJ-O6PsSrYeDw1VgvqCq7ULOLP77LTz0UKbsaw87jy7R1V83vjXUqJz3sIe4SaLmFV85G33IQM22S7t5_LDav7wA8DfAvJQcQs0bNTZcZTjbF26pqHXCM3NNB3394VwAG4fJvhqFCAsC0hmIiYz7JRyXlF-Zu6JX0_jkoIlOSXI=",
+              "verdict": "contradicting",
+              "note": "While Pakistan is slated to host the Shanghai Cooperation Organisation (SCO) Summit in 2027, which could potentially involve PM Modi's attendance, this is explicitly stated to be distinct from a bilateral 'tour'. Current reports from early 2026 indicate that India-Pakistan relations remain largely strained, and recent diplomatic discussions do not confirm a future prime ministerial tour. Context: Current reports from early 2026 indicate that India-Pakistan relations remain largely strained due to issues such as cross-border terrorism and a trus"
+            },
+            {
+              "label": "chahalacademy.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQeYmAHnsF5i4HaDFqlGnFHFxGr_wZIWXrcuSAUkUeyszupkkDaPQ1sXqdvpMV3k45ZUvnr0IisOnyav8IN2XSx2__X6RtQAKaas-SeyS42hOCdd51LHVSkabUUw-GhFYZPinFpBFZkJ65T0MJ-WBLEaV8KK2vyy9zwjDZW7u_yx6QGaCfKB4=",
+              "verdict": "contradicting",
+              "note": "While Pakistan is slated to host the Shanghai Cooperation Organisation (SCO) Summit in 2027, which could potentially involve PM Modi's attendance, this is explicitly stated to be distinct from a bilateral 'tour'. Current reports from early 2026 indicate that India-Pakistan relations remain largely strained, and recent diplomatic discussions do not confirm a future prime ministerial tour. Context: Current reports from early 2026 indicate that India-Pakistan relations remain largely strained due to issues such as cross-border terrorism and a trus"
+            }
+          ],
+          "insufficient": []
+        }
+      ],
+      "flags": [
+        {
+          "tag": "Unverified Language",
+          "severity": "high",
+          "reason": "The claim uses definitive language ('will tour') for a future event that is not confirmed and is contradicted by available information.",
+          "matchedPhrases": [
+            "will tour"
+          ],
+          "learningNote": "Vague claims like 'experts say' or 'people are saying' weaken credibility.",
+          "verificationStep": "Look for named sources, primary documents, and precise attribution."
+        },
+        {
+          "tag": "Missing Source",
+          "severity": "high",
+          "reason": "The claim makes a significant political assertion about a future event without providing any source or attribution.",
+          "matchedPhrases": [],
+          "learningNote": "Credible reporting is traceable. Missing sourcing makes claims harder to trust.",
+          "verificationStep": "Cross-check the claim with at least two reputable or primary sources."
+        }
+      ],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 47,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 39,
+          "note": "The claim that 'pm modi will tour pakistan in 2027' is contradicted by available information. While "
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 20413.79
+    }
+  }
+}
