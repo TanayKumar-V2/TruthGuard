@@ -1,38 +1,126 @@
-@config "../tailwind.config.js";
 @import "tailwindcss";
+
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --font-sans: var(--app-font-sans);
+}
 
 @layer base {
   :root {
-    --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    --background: 210 44% 98%;
-    --foreground: 216 46% 12%;
-    --card: 0 0% 100%;
-    --card-foreground: 216 46% 12%;
-    --primary: 212 100% 43%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 50% 95%;
-    --secondary-foreground: 216 40% 18%;
-    --muted: 210 46% 95%;
-    --muted-foreground: 215 20% 40%;
-    --accent: 205 92% 94%;
-    --accent-foreground: 212 100% 30%;
-    --destructive: 0 75% 48%;
+    --app-font-sans: "Bahnschrift", "Aptos", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 44% 10%;
+    --card-foreground: 210 40% 98%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 222 47% 7%;
+    --secondary: 222 26% 18%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 24% 14%;
+    --muted-foreground: 215 20% 72%;
+    --accent: 189 100% 56%;
+    --accent-foreground: 222 47% 7%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 88%;
-    --input: 214 32% 88%;
-    --ring: 212 100% 43%;
-    --radius: 1rem;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 189 100% 56%;
+    --radius: 1.25rem;
   }
 
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     background-image:
-      radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.14), transparent 34%),
-      radial-gradient(circle at 100% 100%, rgba(14, 165, 233, 0.12), transparent 36%);
+      radial-gradient(circle at top, rgba(99, 102, 241, 0.22), transparent 24%),
+      radial-gradient(circle at 85% 20%, rgba(34, 211, 238, 0.14), transparent 20%),
+      linear-gradient(180deg, rgba(2, 6, 23, 0.98), rgba(2, 6, 23, 1));
     min-height: 100vh;
+    overflow-x: hidden;
   }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+    background-size: 88px 88px;
+    mask-image: radial-gradient(circle at center, black, transparent 84%);
+    z-index: 0;
+  }
+}
+
+@keyframes scanner-sweep {
+  0% {
+    transform: translateX(0%) skewX(-18deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(290%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scanner-sweep {
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.18), rgba(34, 211, 238, 0.45), transparent);
+  filter: blur(18px);
+  animation: scanner-sweep 2.2s linear infinite;
+}
+
+.ticker-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(2, 6, 23, 0.94), transparent 12%, transparent 88%, rgba(2, 6, 23, 0.94));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ticker-track {
+  animation: ticker-scroll 24s linear infinite;
+  width: max-content;
 }
