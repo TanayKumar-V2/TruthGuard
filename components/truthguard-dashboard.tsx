@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { toast } from "sonner";
 import {
   ANALYSIS_STEPS,
   CONSENSUS_TICKER,
@@ -509,14 +510,24 @@ function SimulatorWidget() {
         <div className="mt-4 grid grid-cols-2 gap-3">
           <button
             type="button"
-            onClick={() => submitGuess("real")}
+            onClick={() => {
+              const correct = "real" === headline.verdict;
+              submitGuess("real");
+              if (correct) toast.success("+15 points. Sharp eye, Agent.");
+              else toast.error("-5 points. Systematic deception detected.");
+            }}
             className="rounded-2xl border border-emerald-400/25 bg-emerald-400/10 px-4 py-3 text-sm font-medium text-emerald-100 transition hover:bg-emerald-400/15"
           >
             Real
           </button>
           <button
             type="button"
-            onClick={() => submitGuess("fake")}
+            onClick={() => {
+              const correct = "fake" === headline.verdict;
+              submitGuess("fake");
+              if (correct) toast.success("+15 points. Disinfo neutralized.");
+              else toast.error("-5 points. You fell for the narrative.");
+            }}
             className="rounded-2xl border border-red-500/25 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-100 transition hover:bg-red-500/15"
           >
             Fake
@@ -623,9 +634,12 @@ export function TruthGuardDashboard() {
       }
 
       setAnalysis(payload.analysis);
+      toast.success("Analysis complete. Trust matrix updated.");
     } catch (error) {
       await pipelinePromise;
-      setErrorMessage(error instanceof Error ? error.message : "Unable to analyze content right now.");
+      const msg = error instanceof Error ? error.message : "Unable to analyze content right now.";
+      setErrorMessage(msg);
+      toast.error(msg);
     } finally {
       setIsAnalyzing(false);
       setActiveStepIndex(0);
@@ -850,10 +864,14 @@ export function TruthGuardDashboard() {
                       ["Wrong flag", analysis.feedbackSummary.wrongFlag],
                       ["Missed scam", analysis.feedbackSummary.missedScam],
                     ] as const).map(([label, value]) => (
-                      <div key={label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-4">
+                      <button 
+                        key={label} 
+                        onClick={() => toast.success(`Feedback recorded for ${label}. thank you, Agent.`)}
+                        className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-4 w-full transition hover:bg-white/5 active:scale-95"
+                      >
                         <span className="text-sm text-slate-300">{label}</span>
                         <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-sm text-cyan-100">{value}</span>
-                      </div>
+                      </button>
                     ))}
                     <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-7 text-slate-400">
                       Decentralized trust consensus and literacy scoring are represented here as a future-facing UX layer on top of the existing local feedback model.

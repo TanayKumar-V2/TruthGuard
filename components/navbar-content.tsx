@@ -4,18 +4,24 @@ import { motion } from "framer-motion";
 import { Shield, Menu, X, Bell, User, LogOut } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { logout } from "@/lib/actions/auth-actions";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { useNotifications } from "@/components/providers/notification-provider";
 
 const NAV_LINKS = [
-  { name: "Dashboard", href: "/" },
-  { name: "Threats", href: "#" },
-  { name: "Fact-Check", href: "#" },
-  { name: "Community", href: "#" },
+  { name: "Dashboard", href: "/dashboard" },
+  { name: "Threats", href: "/threats" },
+  { name: "Fact-Check", href: "/fact-check" },
+  { name: "Community", href: "/community" },
 ];
 
 export function NavbarContent({ session }: { session: any }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showNotifs, setShowNotifs] = useState(false);
+  const { notifications, unreadCount, markAllAsRead } = useNotifications();
+  const pathname = usePathname();
   const user = session?.user;
 
   return (
@@ -34,15 +40,29 @@ export function NavbarContent({ session }: { session: any }) {
 
           {/* Desktop Nav */}
           <div className="hidden items-center gap-8 md:flex">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-slate-300 transition hover:text-cyan-400"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={cn(
+                    "text-sm font-medium transition-all relative py-1",
+                    isActive 
+                      ? "text-cyan-400 font-bold" 
+                      : "text-slate-300 hover:text-white"
+                  )}
+                >
+                  {link.name}
+                  {isActive && (
+                    <motion.div 
+                      layoutId="activeNav"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cyan-400 rounded-full shadow-[0_0_10px_#22d3ee]" 
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right Section */}
@@ -51,9 +71,51 @@ export function NavbarContent({ session }: { session: any }) {
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
               System: Secure
             </div>
-            <button className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-slate-400 transition hover:border-cyan-400/50 hover:text-cyan-400">
-              <Bell className="h-4 w-4" />
-            </button>
+            <div className="relative">
+              <button 
+                onClick={() => {
+                  setShowNotifs(!showNotifs);
+                  if (unreadCount > 0) markAllAsRead();
+                }}
+                className="relative grid h-9 w-9 place-items-center rounded-full border border-white/10 text-slate-400 transition hover:border-cyan-400/50 hover:text-cyan-400 group"
+              >
+                <Bell className="h-4 w-4 transition-transform group-hover:rotate-12" />
+                {unreadCount > 0 && (
+                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white shadow-[0_0_10px_rgba(239,68,68,0.5)]">
+                    {unreadCount}
+                  </span>
+                )}
+              </button>
+
+              {showNotifs && (
+                <div className="absolute right-0 mt-4 w-80 rounded-[24px] border border-white/10 bg-slate-900/90 p-4 backdrop-blur-xl shadow-2xl">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xs font-bold text-white uppercase tracking-widest">Intelligence Feed</h3>
+                    <button onClick={() => setShowNotifs(false)} className="text-[10px] text-slate-500 hover:text-white uppercase transition-colors">Close</button>
+                  </div>
+                  <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {notifications.length > 0 ? (
+                      notifications.map((n) => (
+                        <div key={n.id} className="rounded-xl border border-white/5 bg-white/5 p-3 space-y-1">
+                          <div className="flex items-center justify-between">
+                            <span className={cn(
+                              "text-[10px] font-bold uppercase tracking-widest",
+                              n.type === 'success' ? 'text-emerald-400' :
+                              n.type === 'warning' ? 'text-amber-400' : 'text-cyan-400'
+                            )}>{n.title}</span>
+                          </div>
+                          <p className="text-[11px] text-slate-400 leading-relaxed">{n.message}</p>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="py-8 text-center">
+                        <p className="text-[10px] text-slate-600 uppercase tracking-widest">No active alerts</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
             
             {user ? (
               <div className="flex items-center gap-3 pl-2 border-l border-white/10">
@@ -104,16 +166,24 @@ export function NavbarContent({ session }: { session: any }) {
           className="container mx-auto px-4 pb-6 md:hidden"
         >
           <div className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-slate-900/90 p-6 backdrop-blur-xl">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-slate-300 transition hover:text-cyan-400"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-medium transition-all px-4 py-2 rounded-xl",
+                    isActive 
+                      ? "text-cyan-400 bg-cyan-400/10 font-bold border border-cyan-400/20" 
+                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             <hr className="border-white/10" />
             {user ? (
               <div className="flex items-center justify-between">

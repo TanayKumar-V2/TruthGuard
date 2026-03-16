@@ -11,15 +11,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      const isOnDashboard = nextUrl.pathname === "/";
-      const isOnLogin = nextUrl.pathname === "/login";
+      const publicRoutes = ["/", "/login"];
+      const internalRoutes = ["/dashboard", "/threats", "/fact-check", "/community"];
+      
+      const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
+      const isInternalRoute = internalRoutes.some(route => nextUrl.pathname.startsWith(route));
 
-      if (isOnDashboard && !isLoggedIn) {
+      if (isInternalRoute && !isLoggedIn) {
         return false; // Redirect to login
       }
 
-      if (isOnLogin && isLoggedIn) {
-        return Response.redirect(new URL("/", nextUrl));
+      if (nextUrl.pathname === "/login" && isLoggedIn) {
+        return Response.redirect(new URL("/dashboard", nextUrl));
       }
 
       return true;
