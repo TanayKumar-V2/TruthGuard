@@ -1,0 +1,200 @@
+{
+  "key": "a3a4f7cb9b336266c57f9679abdfcaf5ee9420ac3b2d88afc8dacc60b2b3e93c",
+  "created_at": 1773694012.6747375,
+  "expires_at": 1773694912.6747375,
+  "payload": {
+    "analysis": {
+      "trustScore": 84,
+      "manipulationLevel": "LOW",
+      "summary": "A Guardian live blog from March 16, 2026, reports on escalating tensions in the Middle East, specifically a conflict involving the US, Israel, and Iran. Key developments include European nations resisting US President Trump's demands for assistance in the Strait of Hormuz, UK Prime Minister Keir Starmer's refusal to enter a wider war, and various military strikes across the region. The report also mentions significant displacement in Lebanon and the interception of Iranian missiles by Qatar.",
+      "education": "This analysis uses Gemini (gemini-3-flash-preview) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Cross-reference live blog updates with official government statements from the mentioned countries (UK, Germany, Greece, Qatar).",
+        "Verify military strike claims through independent satellite imagery or international monitoring organizations.",
+        "Check financial news outlets for specific data regarding the Indian stock market's performance and its correlation with Middle East events."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 45,
+          "contribution": -45
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 30,
+          "contribution": -30
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 15,
+          "contribution": -15
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 5,
+          "contribution": -5
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "European countries resist Trump's request to help clear the strait of Hormuz.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "theguardian.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERpC2LlL5JHtPj9f4-Ev522TGH1-Vm2jIUImo3Ik6i4iDq3kJ9f_PFVfYvwkahK4FxxsAHm4juXe36TSFFVbtCn6H5i1VfKQ1W4KEq0isOShk7mDqhlrCJGUoe8rJQZlwDOJWp0BKlWQT4JpKuU4jcPdC7AmQaN7fQrGLwf-QlfJNDNCIIhkeVi-jrvMmdPAEqy3_WHEFQ-EVHroBReMcC_-abDEpmrd6m3q5dxbotbAJ-38nJ9w==",
+              "verdict": "supporting",
+              "note": "Retrieved context confirms that Germany and Greece have explicitly stated they will not engage in military operations in the strait. Context: Germany's Chancellor Friedrich Merz stated that the Iran war is \"not a matter for Nato,\" and Greece's government spokesperson, Pavlos Marinakis, confi"
+            },
+            {
+              "label": "theguardian.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOvyJeZGXf2LrtSQMVb9O4j8v4-cisxk_SqbaXLTV8LP-ROyG3VjjGkPVnIXWi6zL8zX09F8QncLQ7qfqDkFeL9rR5fUEym42OOM7q9omq25I7n1c1uto78kO1FHt7EbRfJjDVo84jCTqUnBYM_2u0IGlC7M0vWF4NtB-rs-4BDizojuHPGgbkw6fsl0ftkw==",
+              "verdict": "supporting",
+              "note": "Retrieved context confirms that Germany and Greece have explicitly stated they will not engage in military operations in the strait. Context: Germany's Chancellor Friedrich Merz stated that the Iran war is \"not a matter for Nato,\" and Greece's government spokesperson, Pavlos Marinakis, confi"
+            },
+            {
+              "label": "theguardian.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7gyD58Cj8HFVd4XM178jHQl-ux8_Eizt2Gcv1zu64rCz-DHvuU7U8BubHH8cEUqAg7qCGLlugxG4vqzeoEuLPIZaORpZ2Mt0HRA8R091t5DqjQ2AEmiI0TZP5_GQw4M-g2cRbbl7500jCZYuigtMFaf2xlQ-h9mPBf35x3foxC7nUEhJ0FMS9ubbBiBKTC3NR-jjCRLw3Kxps3d05cohq1y3t_ofsgSLuf9SC2u7niUlBKyX1x024MySJFtx5lB1ROUi3qXfP6PzsdBv2qLOjgz_m73NpEtlKE22QwgYJx67ppLKuTd7avNhxSicMGLAtiXo-xHNIWA==",
+              "verdict": "supporting",
+              "note": "Retrieved context confirms that Germany and Greece have explicitly stated they will not engage in military operations in the strait. Context: Germany's Chancellor Friedrich Merz stated that the Iran war is \"not a matter for Nato,\" and Greece's government spokesperson, Pavlos Marinakis, confi"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "UK Prime Minister Keir Starmer says the UK will not be drawn into a wider war.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "theguardian.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERpC2LlL5JHtPj9f4-Ev522TGH1-Vm2jIUImo3Ik6i4iDq3kJ9f_PFVfYvwkahK4FxxsAHm4juXe36TSFFVbtCn6H5i1VfKQ1W4KEq0isOShk7mDqhlrCJGUoe8rJQZlwDOJWp0BKlWQT4JpKuU4jcPdC7AmQaN7fQrGLwf-QlfJNDNCIIhkeVi-jrvMmdPAEqy3_WHEFQ-EVHroBReMcC_-abDEpmrd6m3q5dxbotbAJ-38nJ9w==",
+              "verdict": "supporting",
+              "note": "Multiple sources confirm Starmer's statement regarding the UK's stance on the conflict. Context: Germany's Chancellor Friedrich Merz stated that the Iran war is \"not a matter for Nato,\" and Greece's government spokesperson, Pavlos Marinakis, confi"
+            },
+            {
+              "label": "theguardian.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOvyJeZGXf2LrtSQMVb9O4j8v4-cisxk_SqbaXLTV8LP-ROyG3VjjGkPVnIXWi6zL8zX09F8QncLQ7qfqDkFeL9rR5fUEym42OOM7q9omq25I7n1c1uto78kO1FHt7EbRfJjDVo84jCTqUnBYM_2u0IGlC7M0vWF4NtB-rs-4BDizojuHPGgbkw6fsl0ftkw==",
+              "verdict": "supporting",
+              "note": "Multiple sources confirm Starmer's statement regarding the UK's stance on the conflict. Context: Germany's Chancellor Friedrich Merz stated that the Iran war is \"not a matter for Nato,\" and Greece's government spokesperson, Pavlos Marinakis, confi"
+            },
+            {
+              "label": "theguardian.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7gyD58Cj8HFVd4XM178jHQl-ux8_Eizt2Gcv1zu64rCz-DHvuU7U8BubHH8cEUqAg7qCGLlugxG4vqzeoEuLPIZaORpZ2Mt0HRA8R091t5DqjQ2AEmiI0TZP5_GQw4M-g2cRbbl7500jCZYuigtMFaf2xlQ-h9mPBf35x3foxC7nUEhJ0FMS9ubbBiBKTC3NR-jjCRLw3Kxps3d05cohq1y3t_ofsgSLuf9SC2u7niUlBKyX1x024MySJFtx5lB1ROUi3qXfP6PzsdBv2qLOjgz_m73NpEtlKE22QwgYJx67ppLKuTd7avNhxSicMGLAtiXo-xHNIWA==",
+              "verdict": "supporting",
+              "note": "Multiple sources confirm Starmer's statement regarding the UK's stance on the conflict. Context: Germany's Chancellor Friedrich Merz stated that the Iran war is \"not a matter for Nato,\" and Greece's government spokesperson, Pavlos Marinakis, confi"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "Qatar intercepted an Iranian missile and drone attack.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "cbsnews.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsm3E_IvSKyekKVB-wqdTg_VJgRIL7AXLKbwyuuBSQCPaNW3jw81IeoJI-pDGtakETso4UnnH-xlnQzcMfQ_fFWKX-hOv9m_mo9IdMH6Y-nX0DcxuDfJrZHZPjeAo5GbiiTBpwIbKq8e8t3hYrRH-tP-9JHlSnDG4dUX6ch0jD2DShSg72RZGpBwdkKdfkgRWellF7SDFXSS0qlO9h1kM=",
+              "verdict": "supporting",
+              "note": "The Qatari Ministry of Defense confirmed the interception of 14 ballistic missiles and all drones on March 16, 2026. Context: The Strait of Hormuz was largely paralyzed by Iran, according to reports. However, Iran's top diplomat did tell CBS News on March 16, 2026, that he sa"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "The Middle East war is the reason for the Indian stock market downfall.",
+          "verdict": "insufficient",
+          "supporting": [],
+          "contradicting": [],
+          "insufficient": [
+            {
+              "label": "Gemini RAG Assessment",
+              "source": "Gemini RAG (gemini-3-flash-preview) + live web + ChromaDB",
+              "url": "",
+              "verdict": "insufficient",
+              "note": "There is no evidence in the retrieved context to support or contradict this specific claim about the Indian stock market."
+            }
+          ]
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 62,
+          "note": "Retrieved 15 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 84,
+          "note": "A Guardian live blog from March 16, 2026, reports on escalating tensions in the Middle East, specifi"
+        }
+      ],
+      "extractedFromUrl": true
+    },
+    "metadata": {
+      "model_used": "gemini-3-flash-preview",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 0.75,
+      "failure_buckets": [],
+      "latency_ms": 47155.46
+    }
+  }
+}

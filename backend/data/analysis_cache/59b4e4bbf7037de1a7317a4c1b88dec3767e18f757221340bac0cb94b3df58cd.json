@@ -1,0 +1,176 @@
+{
+  "key": "59b4e4bbf7037de1a7317a4c1b88dec3767e18f757221340bac0cb94b3df58cd",
+  "created_at": 1773694367.460695,
+  "expires_at": 1773695267.460695,
+  "payload": {
+    "analysis": {
+      "trustScore": 88,
+      "manipulationLevel": "LOW",
+      "summary": "A news report from Outlook India detailing the safe transit of two Indian LPG carriers, Shivalik and Nanda Devi, through the Strait of Hormuz. The report cites the Indian Ministry of Ports, Shipping and Waterways and official statements from Special Secretary Rajesh Kumar Sinha, noting the passage occurred despite heightened regional tensions between Iran and the United States.",
+      "education": "This analysis uses Gemini (gemini-3-flash-preview) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Verify vessel locations using real-time maritime tracking services like MarineTraffic or VesselFinder for the Shivalik and Nanda Devi.",
+        "Check the official website or social media channels of the Indian Ministry of Ports, Shipping and Waterways for the press release mentioned.",
+        "Cross-reference the report with the Press Trust of India (PTI) wire service to confirm the original reporting.",
+        "Monitor official Iranian and US government statements regarding the status of the Strait of Hormuz."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 30,
+          "contribution": -30
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 25,
+          "contribution": -25
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 15,
+          "contribution": -15
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "Indian LPG carriers Shivalik and Nanda Devi are heading to Mundra Port and Kandla Port in Gujarat after crossing the Strait of Hormuz.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 2",
+              "source": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "url": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "verdict": "supporting",
+              "note": "The source and retrieved context explicitly state the names of the vessels and their destination ports. Context: dolu Agency Summary of this article Indian LPG carriers Shivalik and Nanda Devi are now heading to Mundra Port and Kandla Port in Gujarat. Indian mini"
+            },
+            {
+              "label": "Source passage 3",
+              "source": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "url": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "verdict": "supporting",
+              "note": "The source and retrieved context explicitly state the names of the vessels and their destination ports. Context: ed to Mundra Port and Kandla Port in Gujarat. Rajesh Kumar Sinha, Special Secretary in the Ministry of Ports Shipping and Waterways, said during a med"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "The Indian Ministry of Ports, Shipping and Waterways confirmed the safe transit of the vessels.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 1",
+              "source": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "url": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "verdict": "supporting",
+              "note": "The text attributes the information to the ministry and a specific media briefing by Special Secretary Rajesh Kumar Sinha. Context: Two Indian LPG Carriers Cross Strait of Hormuz Safely Amid West Asia Tensions | Outlook India Two Indian LPG Carriers Cross Strait Of Hormuz Safely Am"
+            },
+            {
+              "label": "Source passage 3",
+              "source": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "url": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "verdict": "supporting",
+              "note": "The text attributes the information to the ministry and a specific media briefing by Special Secretary Rajesh Kumar Sinha. Context: ed to Mundra Port and Kandla Port in Gujarat. Rajesh Kumar Sinha, Special Secretary in the Ministry of Ports Shipping and Waterways, said during a med"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "The IRGC claimed it attacked the Israeli military and Iran stated the Strait of Hormuz is 'closed for enemies'.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 5",
+              "source": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "url": "https://www.outlookindia.com/international/two-indian-lpg-carriers-cross-strait-of-hormuz-safely-amid-west-asia-tensions?utm_source=firefox-newtab-en-intl",
+              "verdict": "supporting",
+              "note": "This is listed as a related headline/popular story within the source excerpt. Context: US-Israel-Iran: IRGC Claims It Attacked Israel Military, Iran Says Strait Of Hormuz 'Closed For Enemies’ How The War On Iran Is Distracting From Ukrai"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 63,
+          "note": "Retrieved 10 context passage(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 88,
+          "note": "A news report from Outlook India detailing the safe transit of two Indian LPG carriers, Shivalik and"
+        }
+      ],
+      "extractedFromUrl": true
+    },
+    "metadata": {
+      "model_used": "gemini-3-flash-preview",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [
+        "A supporting claim lacks a top-tier citation but AI confidence is high."
+      ],
+      "live_doc_count": 0,
+      "citation_coverage": 1.0,
+      "failure_buckets": [
+        "citation_policy"
+      ],
+      "latency_ms": 21502.82
+    }
+  }
+}

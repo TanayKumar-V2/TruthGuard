@@ -1,0 +1,141 @@
+{
+  "key": "5f9c170da4753cd9637ecddcba8465680700063aee69f16f9fb01186daadfca6",
+  "created_at": 1773693930.3788111,
+  "expires_at": 1773694830.3788111,
+  "payload": {
+    "analysis": {
+      "trustScore": 91,
+      "manipulationLevel": "LOW",
+      "summary": "The claim that the Middle East conflict is a reason for the Indian stock market downfall is strongly supported by multiple live web sources. These sources indicate that escalating conflict, particularly involving Iran, Israel, and the United States, has been a primary driver of market downturns in India, leading to significant drops in indices like the Nifty and Sensex in March 2026.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Cross-reference information with multiple reputable financial news outlets.",
+        "Look for official statements from financial institutions or government bodies regarding market movements.",
+        "Consider the broader economic context and other potential factors influencing market performance."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 5,
+          "contribution": -5
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 5,
+          "contribution": -5
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "middle east war is the reason for indian stock market downfall",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "indiatimes.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQF-dttFTCFGPrvMwkFX0HMFjX2t0OqRrrBixmno_1vUf177bH4gp0U_eneI319ZhzKwuWdpR4pA1mpMOVACwCxuXsvG1PzE2dv4YOA0dx2YScROFfnSQfELtC2poIB1ZdGrXIrNcrTl_zqIc7bmrBEE8qYvdh1GrZg77vK_-aCbcGeg2FBbpTPH40peLU7neZLF9VVO5fQZiwpCJh2lYCq0rjZLKjUQM-4zeMt2bC2uknsAG6FOmkhdjqdAnkGQYzp5CCtegzHa_OdSdxskb2IY8cPWISR7Ku784ACZZHUuOPj2lY0V--lFmLrPiAZhwk2W9aRxG-msTMG6GKCIyOAzTynsSEO7g6qXIWzdhwC8oPJe8LuYn5gFsaxLkiX4Az5TgZRgJITJeiRLE6ooU-qrPYzvP342CG1xFwriHkD7M=",
+              "verdict": "supporting",
+              "note": "Multiple retrieved web sources confirm that the escalating conflict in the Middle East has been a primary driver of the market downturn in India, leading to significant drops in indices like the Nifty and Sensex in March 2026. Context: The escalating conflict in the Middle East, particularly involving Iran, Israel, and the United States, has been a primary driver of the market downtu"
+            },
+            {
+              "label": "goodreturns.in",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcZ9jiUckOUZoKH7fYAYiinQXiyqe0RGjKR2yIpmBCOr-0I7NZXcy56hCkM0BFJVLX511qgC33e3E5AT-vWFUfk2TaArE3vvpM5lLh0U1k4ArtRvwetCo7w75Gf3-ox5AnaADtQtAu1StbzWx2qHUIRnPldeDLBHCG-SGM0XGhhm6ZTQIrYiG7SZQ6GwYVMdDOBOoz3VI308M3GPOp6oFz7DrEhgh_mTb5Ux26surdfZD6rQrg7ZkdRD5Ut2seWkbQ9HBPUMvteNfIw1bq",
+              "verdict": "supporting",
+              "note": "Multiple retrieved web sources confirm that the escalating conflict in the Middle East has been a primary driver of the market downturn in India, leading to significant drops in indices like the Nifty and Sensex in March 2026. Context: The escalating conflict in the Middle East, particularly involving Iran, Israel, and the United States, has been a primary driver of the market downtu"
+            },
+            {
+              "label": "blissmoney.in",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPMxOsRJDSUu7i8dySQcnx8_-F-4eVaFFE8yYPlDYIiv8pF8r9EgaaaH7XMS4YSlTAdnsmivmLgUZGvY51gFNUsoql3XyrNubQ3rryBlqDRsnRLANwIqYYRD_3Ia06NPaVa-iE0YSr9d-_LPh58mO7MtjNnwzDdCccb5itVGI9JwRP3jIiJzEbFDTUd5YOqxEYDmKlsc4m49Xlo7raGa3d9Feuc1G8Y1iROOSyv0bjWlu1lTPis3BZW8wZR0bf34o=",
+              "verdict": "supporting",
+              "note": "Multiple retrieved web sources confirm that the escalating conflict in the Middle East has been a primary driver of the market downturn in India, leading to significant drops in indices like the Nifty and Sensex in March 2026. Context: The escalating conflict in the Middle East, particularly involving Iran, Israel, and the United States, has been a primary driver of the market downtu"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 91,
+          "note": "The claim that the Middle East conflict is a reason for the Indian stock market downfall is strongly"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 20199.28
+    }
+  }
+}

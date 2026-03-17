@@ -1,0 +1,269 @@
+{
+  "key": "ac06fefe843cc660ecde514d57cb79a6a357647729875ee21fb2f42a15229573",
+  "created_at": 1773722379.694483,
+  "expires_at": 1773723279.694483,
+  "payload": {
+    "analysis": {
+      "trustScore": 49,
+      "manipulationLevel": "MEDIUM",
+      "summary": "The article from The Times of India provides live updates on an escalating conflict involving the United States, Israel, and Iran. It reports that the Iran Navy has vowed revenge for a US torpedo strike that allegedly killed 80 sailors. The conflict is described as one of the most volatile crises in the Middle East, characterized by missile strikes, drone attacks, and air raids. The confrontation reportedly began after coordinated American and Israeli strikes targeted Iranian military infrastructure, leading to retaliatory attacks from Tehran. The article also mentions that Iran's foreign minister, Abbas Araghchi, stated that nuclear material at Iranian facilities is buried under rubble and could only be retrieved under IAEA supervision. The conflict has spread across multiple fronts, affecting global energy routes and involving several countries hosting American bases.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Cross-reference the reported US torpedo strike and casualties with multiple independent and credible news sources.",
+        "Verify statements attributed to officials like Iran's Foreign Minister Abbas Araghchi through official government channels or direct transcripts.",
+        "Examine the specific details of the 'coordinated American and Israeli strikes' and their targets from official military or government statements.",
+        "Be cautious of emotionally charged language and headlines, and seek out reporting that uses neutral and factual phrasing.",
+        "Be wary of dramatic or exaggerated language that lacks supporting evidence."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 90,
+          "contribution": -90
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 85,
+          "contribution": -85
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 80,
+          "contribution": -80
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 75,
+          "contribution": -75
+        },
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 65,
+          "contribution": 65
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 40,
+          "contribution": -40
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 30,
+          "contribution": -30
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "US Israel Iran War News Live Updates: Iran Navy vows revenge for US torpedo strike that killed 80 sailors, says 'will not forget enemy’s crime'",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "the-star.co.ke",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXmgoZgwokoN1JDB9BS1LcE4JtdiPYcBVxfxBYBBKHSCXkc45AXlUej2eJ6cijsUTWmi-XJoNF_WGcICc6aniXzBU9NdUnX-TVAzmiM-BVvVp1EHqjvHRFMgwD1aECMt15HUTg7LvZzG2siSMmt4H8hDQA6rv4nSJFiL6tHmsbioCiR6DUUk2qo8CXd78bzNJrFfo22jqwg9DxvbrRa04L",
+              "verdict": "supporting",
+              "note": "External evidence corroborates the report of 80 Iranian sailors killed in a US torpedo strike and Iran's strong reaction, including a vow of revenge. Context: This attack resulted in the deaths of over 80 Iranian sailors Iran's Foreign Minister Abbas Araghchi stated that the US \"perpetrated an atrocity at se"
+            },
+            {
+              "label": "Source passage 1",
+              "source": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "url": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "verdict": "supporting",
+              "note": "External evidence corroborates the report of 80 Iranian sailors killed in a US torpedo strike and Iran's strong reaction, including a vow of revenge. Context: US Israel Iran War News Live Updates: Iran Navy vows revenge for US torpedo strike that killed 80 sailors, says 'will not forget enemy’s crime' Editio"
+            },
+            {
+              "label": "Source passage 2",
+              "source": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "url": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "verdict": "supporting",
+              "note": "External evidence corroborates the report of 80 Iranian sailors killed in a US torpedo strike and Iran's strong reaction, including a vow of revenge. Context: enemy’s crime' THE TIMES OF INDIA | Mar 17, 2026, 09:57:35 IST Share LIVE NOW US-Israel-Iran War News Live Updates: Iran Navy vows revenge for US torp"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "Iran’s foreign minister Abbas Araghchi has said that nuclear material at Iranian facilities is currently buried under rubble following recent attacks, adding that it could only be retrieved under supervision from the International Atomic Energy Agency.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 5",
+              "source": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "url": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "verdict": "supporting",
+              "note": "The statement by Iran's Foreign Minister Abbas Araghchi regarding nuclear material buried under rubble and IAEA supervision is directly reported in the source and corroborated by retrieved context. Context: including its air defence systems and drone production capabilities. Iran’s foreign minister Abbas Araghchi has said that nuclear material at Iranian "
+            },
+            {
+              "label": "wuft.org",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL5W2qEgkSt9IhjAiRuBXNPJLMVpTOBM8I0wzzq6WXkeiCWjHZB2tDh_Siwu44ZHX_xlY-QPOje4k8-j7XurjWNC7TyPdYIo4DX4AjCDslBTCex4aR_8mfuVYkG8XZInyA93QTS0umMRI9DPnKe6TN8A3f77w84GM_3UhlWCSGCHbB56wNyzL0jzyTBEEcFIzVi2ClKKxSd_A7NdtYhX2kQCa6xZtXnBs=",
+              "verdict": "supporting",
+              "note": "The statement by Iran's Foreign Minister Abbas Araghchi regarding nuclear material buried under rubble and IAEA supervision is directly reported in the source and corroborated by retrieved context. Context: These initial strikes triggered retaliatory attacks from Iran He added that while retrieval is possible under the supervision of the International Ato"
+            },
+            {
+              "label": "parliament.uk",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrM_RnyKLN5lFHZ8aXHJZUPrmAOMakJpOk6syYBNVvNMTBqO1wsyg5DhGZOJlRWj9IzJjYX2-ZY1MiZKJ1qvkKmTcTTExHGzX31U8s2itLsN1lKHnFvM-f-gEaLGemZIeHbTKDPtWuMw9UhwKH6Hozt9HYZacR8GE-wJVkLWCQ-9cgoppbHwMPjg==",
+              "verdict": "supporting",
+              "note": "The statement by Iran's Foreign Minister Abbas Araghchi regarding nuclear material buried under rubble and IAEA supervision is directly reported in the source and corroborated by retrieved context. Context: A \"US-Israel-Iran War\" is currently ongoing, having commenced on February 28, 2026, with coordinated American and Israeli strikes targeting Iranian mi"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "Several countries hosting American bases including the United Arab Emirates, Saudi Arabia, Bahrain and Kuwait, have reported interceptions of drones or missile threats, highlighting the widening geographical scope of the conflict.",
+          "verdict": "insufficient",
+          "supporting": [],
+          "contradicting": [],
+          "insufficient": [
+            {
+              "label": "Gemini RAG Assessment",
+              "source": "Gemini RAG (gemini-2.5-flash) + live web + ChromaDB",
+              "url": "",
+              "verdict": "insufficient",
+              "note": "The retrieved evidence was not strong enough to support a definitive verdict under the strict citation policy."
+            }
+          ]
+        },
+        {
+          "claim": "The confrontation began after coordinated American and Israeli strikes targeted Iranian military infrastructure, triggering a series of retaliatory attacks from Tehran and expanding the conflict beyond the three main adversaries.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 3",
+              "source": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "url": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-udates-middle-east-crisis-conflict-drone-ballistic-missile-attack-explosions-gulf-countries-dubai-news-donald-trump-netanyahu-mojtaba-khamenei/liveblog/129598871.cms",
+              "verdict": "supporting",
+              "note": "The initiation of the conflict with coordinated American and Israeli strikes targeting Iranian military infrastructure, followed by retaliatory attacks from Tehran, is supported by both the source and external context. Context: litary infrastructure, triggering a series of retaliatory attacks from Tehran and expanding the conflict beyond the three main adversaries. Since the "
+            },
+            {
+              "label": "parliament.uk",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrM_RnyKLN5lFHZ8aXHJZUPrmAOMakJpOk6syYBNVvNMTBqO1wsyg5DhGZOJlRWj9IzJjYX2-ZY1MiZKJ1qvkKmTcTTExHGzX31U8s2itLsN1lKHnFvM-f-gEaLGemZIeHbTKDPtWuMw9UhwKH6Hozt9HYZacR8GE-wJVkLWCQ-9cgoppbHwMPjg==",
+              "verdict": "supporting",
+              "note": "The initiation of the conflict with coordinated American and Israeli strikes targeting Iranian military infrastructure, followed by retaliatory attacks from Tehran, is supported by both the source and external context. Context: A \"US-Israel-Iran War\" is currently ongoing, having commenced on February 28, 2026, with coordinated American and Israeli strikes targeting Iranian mi"
+            },
+            {
+              "label": "wikipedia.org",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk1pnglzNcwaCbBf908PaGeUQ60sO0La-xEpJY1vPr7dqDAjcEctoZHUvh45e_HOdhA9WCgVXRHChnfiCN-uKCSIbuNGjJyhnszH3ojSoO71YYvDzYNmgBw9a4Q25EW90Jy09hbQ==",
+              "verdict": "supporting",
+              "note": "The initiation of the conflict with coordinated American and Israeli strikes targeting Iranian military infrastructure, followed by retaliatory attacks from Tehran, is supported by both the source and external context. Context: A \"US-Israel-Iran War\" is currently ongoing, having commenced on February 28, 2026, with coordinated American and Israeli strikes targeting Iranian mi"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [
+        {
+          "tag": "Sensationalism",
+          "severity": "high",
+          "reason": "The language used in the headline and throughout the article is highly dramatic and emotionally charged to capture attention.",
+          "matchedPhrases": [
+            "vows revenge",
+            "killed 80 sailors",
+            "enemy’s crime",
+            "most volatile crises"
+          ],
+          "learningNote": "Sensationalist content exaggerates facts to provoke strong reactions.",
+          "verificationStep": "Be wary of dramatic or exaggerated language that lacks supporting evidence."
+        },
+        {
+          "tag": "Clickbait",
+          "severity": "medium",
+          "reason": "The headline uses a 'Live Updates' format and dramatic language to create a curiosity gap and encourage clicks.",
+          "matchedPhrases": [
+            "US Israel Iran War News Live Updates",
+            "Iran Navy vows revenge for US torpedo strike that killed 80 sailors, says 'will not forget enemy’s crime'"
+          ],
+          "learningNote": "Clickbait uses misleading framing to drive attention rather than inform clearly.",
+          "verificationStep": "Check if the headline or lead accurately represents the actual content."
+        },
+        {
+          "tag": "Emotional Manipulation",
+          "severity": "high",
+          "reason": "The article uses highly emotional language to provoke strong reactions from the reader.",
+          "matchedPhrases": [
+            "vows revenge",
+            "killed 80 sailors",
+            "enemy’s crime",
+            "atrocity at sea"
+          ],
+          "learningNote": "Emotional manipulation pushes quick reactions before careful verification.",
+          "verificationStep": "Pause before reacting to fear, outrage, or guilt-heavy wording and look for evidence."
+        },
+        {
+          "tag": "Urgency / Pressure Tactics",
+          "severity": "high",
+          "reason": "The 'Live Updates' format and 'LIVE NOW' indicator create a sense of urgency, implying that the reader needs to stay constantly informed.",
+          "matchedPhrases": [
+            "Live Updates",
+            "LIVE NOW"
+          ],
+          "learningNote": "Artificial urgency is a common scam tactic because it prevents careful checks.",
+          "verificationStep": "Treat countdowns, scarcity claims, and immediate action requests as risk signals."
+        }
+      ],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 51,
+          "note": "Retrieved 14 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 49,
+          "note": "The article from The Times of India provides live updates on an escalating conflict involving the Un"
+        }
+      ],
+      "extractedFromUrl": true
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 1,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [
+        "Downgraded a claim verdict because it lacked strong cited evidence."
+      ],
+      "live_doc_count": 4,
+      "citation_coverage": 0.75,
+      "failure_buckets": [
+        "citation_policy"
+      ],
+      "latency_ms": 41756.7
+    }
+  }
+}

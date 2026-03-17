@@ -1,0 +1,163 @@
+{
+  "key": "eca4911e6a9b547789fdbeced68f5523c533a2a985240dfd9130678a08142f0c",
+  "created_at": 1773692691.8352153,
+  "expires_at": 1773693591.8352153,
+  "payload": {
+    "analysis": {
+      "trustScore": 42,
+      "manipulationLevel": "MEDIUM",
+      "summary": "The claim that India has 59 states is factually incorrect. Official and reputable sources consistently state that India has 28 states and 8 Union Territories.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Always cross-reference factual claims, especially numerical data, with multiple reputable and official sources.",
+        "Consult government websites or established encyclopedias for current administrative divisions of countries.",
+        "Look for named sources, primary documents, and precise attribution.",
+        "Cross-check the claim with at least two reputable or primary sources."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 80,
+          "contribution": -80
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 80,
+          "contribution": -80
+        },
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 10,
+          "contribution": 10
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "there are 59 states in india",
+          "verdict": "contradicting",
+          "supporting": [],
+          "contradicting": [
+            {
+              "label": "pwonlyias.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZE0U0UVMg39IpWjrpyu_mFGyYeKhRbmWur8MtT5pdEsku2OMYxECXYadaVojbAqQeZbcRDBPZNO1voslbgbPdmYPX0Nm_J7oaRru9jFP9y-9z4AGaDMoemzsKspqwTp8cGrKwDF9ytbQNHbM78g==",
+              "verdict": "contradicting",
+              "note": "Reliable sources indicate that India has 28 states and 8 Union Territories, not 59 states. This configuration has been in effect since January 26, 2020. Context: There are 28 states in India. Additionally, India has 8 Union Territories. This configuration has been in effect since January 26, 2020, following the"
+            },
+            {
+              "label": "adda247.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN-B3SyVOdmx6nKbHClqiajx25uRyavA8laEjU0xWfKqZvK0perWotn3LCqMK0XGfSt2LOmgEtpuYAtkIcRc7D3BcwZA7Yh_wClXXJ3Ly1GuTVRmTe7TGjGmwCV5zCwFAIUTnQQ360R7KQYxmle5MmfLs=",
+              "verdict": "contradicting",
+              "note": "Reliable sources indicate that India has 28 states and 8 Union Territories, not 59 states. This configuration has been in effect since January 26, 2020. Context: There are 28 states in India. Additionally, India has 8 Union Territories. This configuration has been in effect since January 26, 2020, following the"
+            },
+            {
+              "label": "verandarace.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4jH3sTFr2PoD2xew3XiWPCJWKYus7dj07Z11VscwCPN23BWlkXPEcDmLaQl-1gz9hBNWrYFueXLjNEUeEWN74fbsIdK1oAVECihILu7lyHN5Yd-sKw7x1maeNAAol_3LlsLGkXX7sz9SWwG8-O9ow-pz_YUM76uxPTympuXN51GbG",
+              "verdict": "contradicting",
+              "note": "Reliable sources indicate that India has 28 states and 8 Union Territories, not 59 states. This configuration has been in effect since January 26, 2020. Context: There are 28 states in India. Additionally, India has 8 Union Territories. Search query context: how many states are there in India 2026, number of st"
+            }
+          ],
+          "insufficient": []
+        }
+      ],
+      "flags": [
+        {
+          "tag": "Unverified Language",
+          "severity": "high",
+          "reason": "The claim presents an incorrect number of states in India without any verification or supporting evidence, contradicting readily available information.",
+          "matchedPhrases": [
+            "there are 59 states in india"
+          ],
+          "learningNote": "Vague claims like 'experts say' or 'people are saying' weaken credibility.",
+          "verificationStep": "Look for named sources, primary documents, and precise attribution."
+        },
+        {
+          "tag": "Missing Source",
+          "severity": "high",
+          "reason": "The claim provides a specific number of states without citing any source, and this number is contradicted by reliable information.",
+          "matchedPhrases": [
+            "there are 59 states in india"
+          ],
+          "learningNote": "Credible reporting is traceable. Missing sourcing makes claims harder to trust.",
+          "verificationStep": "Cross-check the claim with at least two reputable or primary sources."
+        }
+      ],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 48,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 42,
+          "note": "The claim that India has 59 states is factually incorrect. Official and reputable sources consistent"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 14704.45
+    }
+  }
+}

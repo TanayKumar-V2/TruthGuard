@@ -1,0 +1,141 @@
+{
+  "key": "0124fdbb5f91b38ea1b3f6fa3bf942808c5e12e70be5ead280ffadadf1412535",
+  "created_at": 1773713502.0969331,
+  "expires_at": 1773714402.0969331,
+  "payload": {
+    "analysis": {
+      "trustScore": 93,
+      "manipulationLevel": "LOW",
+      "summary": "The claim \"iran vs israel war going on\" is highly credible and supported by multiple reputable sources. The retrieved context confirms that a conflict between Iran and Israel began on February 28, 2026, involving coordinated airstrikes and retaliations, and has since escalated.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Consult multiple reputable news organizations for ongoing updates on the conflict.",
+        "Look for official statements from the governments of Iran, Israel, and involved international bodies.",
+        "Verify the timeline and specific events of the conflict through established news archives."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "iran vs israel war going on",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "indiatimes.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1cMSC63VIDL4QV-s2IM4WHZs3-hFG8GhbJTRdLFeAg4lRfYdBrfy1O5mWzRhdsx1GL9JJrpfonO8isH8qIt8ZBe6a1RT0VYDwDb5DyGVXiNn_nbWPanAzl6g3PdSdhwnFTxV_1s-55LZHPbxUXzHmtt2IyRX7k1GbB6UHzoB4FLbUPTxdLU2Fc5zHbZzmFYG0aQdWwBvATmbuGnYex3644BDNuIdX3sfWJ5dZF2Sz86wKCRfb4zKFZgTehfkvCYet7xUVuQZPWaDSqsMnXD_tpSyoirB2PAvRP1FP8PSMv3Gf_V02pI7pZSmXyFEBVOaFOlfEUnGN_lOl_PeBtyQFoTtbNsyiGVgak26HdhxFE4MYt6Aq9iSq1CpKy3OF9R7qxbaq0QjC92amLAFGsH1YBHen",
+              "verdict": "supporting",
+              "note": "Multiple reputable sources confirm that a conflict between Iran and Israel began on February 28, 2026, involving airstrikes and retaliations, which is ongoing as of the analysis date. Context: The conflict began on February 28, 2026, with coordinated airstrikes by the United States and Israel on military infrastructure and leadership targets"
+            },
+            {
+              "label": "wikipedia.org",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3OBP4fZmow-jMo0XFh3N4kRNGfY310xtft8gJEaBUyH0kqbEWpQuML77uoPMGoL6bTugz_hle3HhjX6rxSdumn7DorpA-KyPa91Jn2n8_XL4AmY7OUkkpGpyBfnQG_wmVVRsstw==",
+              "verdict": "supporting",
+              "note": "Multiple reputable sources confirm that a conflict between Iran and Israel began on February 28, 2026, involving airstrikes and retaliations, which is ongoing as of the analysis date. Context: The conflict began on February 28, 2026, with coordinated airstrikes by the United States and Israel on military infrastructure and leadership targets"
+            },
+            {
+              "label": "britannica.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWVmfET9-c_W8oIy4jWTZRO3sndEend_Pm_mxO1HjatEWDhg1CyoTkj8fe7ECusBiutOm1zJzM0TuLQiKaeHICAkvmFULKPKswaxupFqbzxxcftl90VovAbPq8zXdgtaJFlzDqq6zDu3cypc7V",
+              "verdict": "supporting",
+              "note": "Multiple reputable sources confirm that a conflict between Iran and Israel began on February 28, 2026, involving airstrikes and retaliations, which is ongoing as of the analysis date. Context: The conflict began on February 28, 2026, with coordinated airstrikes by the United States and Israel on military infrastructure and leadership targets"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 93,
+          "note": "The claim \"iran vs israel war going on\" is highly credible and supported by multiple reputable sourc"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 32268.26
+    }
+  }
+}

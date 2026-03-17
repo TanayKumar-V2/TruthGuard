@@ -1,38 +1,18 @@
 {
   "key": "c30ed7cc6e7ffcb8a12b9efe06b47a4b57934202a7c6b69324cd342e00492064",
-  "created_at": 1773688189.6362007,
-  "expires_at": 1773689089.6362007,
+  "created_at": 1773719868.536201,
+  "expires_at": 1773720768.536201,
   "payload": {
     "analysis": {
-      "trustScore": 38,
-      "manipulationLevel": "HIGH",
-      "summary": "The source excerpt claims that Pakistan won the 2024 T20 World Cup, which is factually incorrect. Multiple reliable sources confirm that India won the 2024 ICC Men's T20 World Cup.",
+      "trustScore": 50,
+      "manipulationLevel": "MEDIUM",
+      "summary": "The claim that Pakistan won the 2024 T20 World Cup is false. Official sources confirm that India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final.",
       "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
       "verificationTips": [
-        "Verify sports results with official sports organizations (e.g., ICC) or reputable sports news outlets.",
-        "Cross-reference information with multiple independent and credible sources.",
-        "Look for named sources, primary documents, and precise attribution.",
-        "Cross-check the claim with at least two reputable or primary sources."
+        "Always cross-reference sports results with multiple reputable sports news outlets or official tournament websites.",
+        "Be wary of claims that contradict widely reported and easily verifiable facts."
       ],
       "scoreBreakdown": [
-        {
-          "category": "Unverified Language",
-          "impact": "negative",
-          "scoreValue": 90,
-          "contribution": -90
-        },
-        {
-          "category": "Missing Source",
-          "impact": "negative",
-          "scoreValue": 90,
-          "contribution": -90
-        },
-        {
-          "category": "Factual / Credible Content",
-          "impact": "positive",
-          "scoreValue": 5,
-          "contribution": 5
-        },
         {
           "category": "Sensationalism",
           "impact": "negative",
@@ -58,8 +38,26 @@
           "contribution": 0
         },
         {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
           "category": "Financial Scam Risk",
           "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
           "scoreValue": 0,
           "contribution": 0
         }
@@ -81,50 +79,29 @@
             {
               "label": "wikipedia.org",
               "source": "vertexaisearch.cloud.google.com",
-              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJSDLYQHODVpqTLZRH8JLQcCAmy8CNZJL0UX0vO53xDg77uRVg95KegsqSCJ5k7EDhrvqbDcstGcYqgV8866Vwubi3VX4UA4l5Dmib32YraDFc6rH-vBFb1CYZeWzYvpGpKYfTssMVB0xDLAw8hAP0QAUpYDEpSSdM",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS0T5zAUtITHYbzePPEMIe15YNfS7fXODEPk_wWM_Kx2z1ib85gHocDZjDC6H0OE3kam26LBImAsNqm0lLIBErV1MnMEmJt2F4wh_kDLxU2rW0ze-yB5STq0NKEhcjVjazYNEjvzDSRboCZZSzZxqz7_nr8JK0rg==",
               "verdict": "contradicting",
-              "note": "Multiple reliable sources state that India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final. Context: India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final by seven runs. Search query context: who won 2024 T20 World Cup, 2024 "
-            },
-            {
-              "label": "theguardian.com",
-              "source": "vertexaisearch.cloud.google.com",
-              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMYsA8w5Brm38wfHJ7QaGnMqdOFcNZBTNgh-mmUOxPuGmAK_T5CgqJidYyvLyh3zvPaF579QoLQrYLcDGaaZ-ZPRUkXbl3-B1UkP0FzQN8VCBUdASQ7nqVsWUM1UblT5MBWzruRpWlQFBkBpx7zEfSP66CH2yEH43oF6jbTjbOVoZ-4NIO4FncsRjO0271z88hT-T9bzRZ1vpWONqnymE=",
-              "verdict": "contradicting",
-              "note": "Multiple reliable sources state that India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final. Context: India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final by seven runs. Search query context: who won 2024 T20 World Cup, 2024 "
+              "note": "Multiple reliable sources confirm that India won the 2024 ICC Men's T20 World Cup, defeating South Africa. Context: India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final by seven runs. This marked India's second T20 World Cup title. Search "
             },
             {
               "label": "indiatimes.com",
               "source": "vertexaisearch.cloud.google.com",
-              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw3ir33EwT0lCZdr3f6Q1th3wTI23wDkb6OIN46Np6lDIz5yVCP85g7MERB7vHGE49imppzYXn1veGUqKQvmoEX91i9xpJxQEO3h355ffFoElRViLxOQd82KVDTRp_9SGDMCgMIjOzo051JdizeXRqhY9GmbZOGdnQqs33kQeUaxwShc84ILuo-fkjihwq9FSkaLWYSHCFJ7Rc3T9y6f6fM6_Wc4PEKJA0wv0WqgPdhK-rOgniRH0MJquWjix6g7EZmQphXUdPVend5ezfiNKPTA-omB0Q5vSSbSxt4Cnp0UQz4pY=",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2uOszgQUIqPeZwzcmeL7xok8E4pxoURafR8BF861PTUcKBhAVNURcDKFkpIgyBvcob7qzidDkFm-kNAPltKYXkEKvKYkQQw2S_WnFBzX1p2Fg7eJd6OGl6rTDwWHAZtsStlMmKD7HEoh_328QjivV5JfNgb-Uot3s4GV-wa0I2QYbsVR_iO1lewqCaAdzqBiXEdPv7oKA9W5fq_5tQIMi1oU1LVjgu9FhUGxSsvOk6W4rKo0d5wl2-_PYkB2lK33pPPZUxhtVpAHmz1VJBJ_ZMiUb7UrMUDGhTnE69hyARA3S",
               "verdict": "contradicting",
-              "note": "Multiple reliable sources state that India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final. Context: India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final by seven runs. Search query context: who won 2024 T20 World Cup, 2024 "
+              "note": "Multiple reliable sources confirm that India won the 2024 ICC Men's T20 World Cup, defeating South Africa. Context: India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final by seven runs. This marked India's second T20 World Cup title. Search "
+            },
+            {
+              "label": "wikipedia.org",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHjNhjd1VzoZX10BPC37tj02yx2xBHj93aHlEtfDAWTnHRqE3NOmWOrgyGD7ZGvhlSA5vEDFAI7DZOFBHKgiYnOGVTH5EJP1Yu0tvxx3BhRwRVG5MfJ7Wz2cerGOPljOSA9xhM4MbEx5p22NgX3Sg5ww==",
+              "verdict": "contradicting",
+              "note": "Multiple reliable sources confirm that India won the 2024 ICC Men's T20 World Cup, defeating South Africa. Context: India won the 2024 ICC Men's T20 World Cup, defeating South Africa in the final by seven runs. This marked India's second T20 World Cup title. Search "
             }
           ],
           "insufficient": []
         }
       ],
-      "flags": [
-        {
-          "tag": "Unverified Language",
-          "severity": "high",
-          "reason": "The claim made in the source excerpt is directly contradicted by multiple reliable sources, indicating unverified or false information.",
-          "matchedPhrases": [
-            "Pakistan Won 2024 T20 WC"
-          ],
-          "learningNote": "Vague claims like 'experts say' or 'people are saying' weaken credibility.",
-          "verificationStep": "Look for named sources, primary documents, and precise attribution."
-        },
-        {
-          "tag": "Missing Source",
-          "severity": "high",
-          "reason": "The claim is presented as a fact without any supporting source and is contradicted by external evidence.",
-          "matchedPhrases": [
-            "Pakistan Won 2024 T20 WC"
-          ],
-          "learningNote": "Credible reporting is traceable. Missing sourcing makes claims harder to trust.",
-          "verificationStep": "Cross-check the claim with at least two reputable or primary sources."
-        }
-      ],
+      "flags": [],
       "trustTimeline": [
         {
           "label": "Baseline",
@@ -135,14 +112,14 @@
         {
           "label": "After Retrieval",
           "step": "RAG Context",
-          "score": 47,
+          "score": 50,
           "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
         },
         {
           "label": "Final Verdict",
           "step": "Complete",
-          "score": 38,
-          "note": "The source excerpt claims that Pakistan won the 2024 T20 World Cup, which is factually incorrect. Mu"
+          "score": 50,
+          "note": "The claim that Pakistan won the 2024 T20 World Cup is false. Official sources confirm that India won"
         }
       ],
       "extractedFromUrl": false
@@ -157,7 +134,7 @@
       "live_doc_count": 4,
       "citation_coverage": 1.0,
       "failure_buckets": [],
-      "latency_ms": 12338.04
+      "latency_ms": 31016.32
     }
   }
 }

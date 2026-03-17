@@ -1,13 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  async rewrites() {
-    return [
+  images: {
+    remotePatterns: [
       {
-        source: "/api/:path*",
-        destination: "http://127.0.0.1:8000/api/:path*", // Proxy to FastAPI Backend
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "**",
       },
-    ];
+    ],
   },
 };
 

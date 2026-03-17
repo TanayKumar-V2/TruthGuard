@@ -1,0 +1,127 @@
+{
+  "key": "e120872a3d6bae643b0bcf9558170385e68b251a0dfb715113a28eec58616b95",
+  "created_at": 1773699237.291389,
+  "expires_at": 1773700137.291389,
+  "payload": {
+    "analysis": {
+      "trustScore": 93,
+      "manipulationLevel": "LOW",
+      "summary": "The source excerpt reports that India won the 2026 ICC Men's T20 World Cup. Given the current date of March 17, 2026, this aligns with the expected conclusion of the tournament, which was scheduled to be co-hosted by India and Sri Lanka in February and March 2026.",
+      "education": "This analysis uses Gemini (gemini-3-flash-preview) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Check the official ICC (International Cricket Council) website for tournament results and archives.",
+        "Verify the claim through major international sports news outlets such as ESPN, BBC Sport, or Reuters.",
+        "Confirm the final match date and score to ensure the report is accurate."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "India won T20 WC 2026",
+          "verdict": "insufficient",
+          "supporting": [],
+          "contradicting": [],
+          "insufficient": [
+            {
+              "label": "Gemini RAG Assessment",
+              "source": "Gemini RAG (gemini-3-flash-preview) + live web + ChromaDB",
+              "url": "",
+              "verdict": "insufficient",
+              "note": "While the date is consistent with the conclusion of the 2026 T20 World Cup, the provided context does not contain the official match results to confirm the winner."
+            }
+          ]
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 6 context passage(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 93,
+          "note": "The source excerpt reports that India won the 2026 ICC Men's T20 World Cup. Given the current date o"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-3-flash-preview",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 0,
+      "citation_coverage": 0.0,
+      "failure_buckets": [],
+      "latency_ms": 23509.79
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "key": "094376210f026de13be20b32db3509f550132b9af5059c0f5a961ad28f5cce27",
+  "created_at": 1773693743.6389074,
+  "expires_at": 1773694643.6389074,
+  "payload": {
+    "analysis": {
+      "trustScore": 92,
+      "manipulationLevel": "LOW",
+      "summary": "The source excerpt states that Ayatollah Khamenei is dead. This claim is strongly supported by multiple current news sources in the retrieved context, indicating high factual credibility.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Verify the information with multiple independent and reputable news organizations.",
+        "Look for official statements or announcements from relevant government bodies or international organizations.",
+        "Check the date of reporting to ensure the information is current and not outdated."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "ayatollah khamenei is dead",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "theguardian.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhYONfOvXVmyAeVIXPIzJggPHiXYu644p_plKObLuXxxeVD6cvfTbw4EiezluSpukfeDsHvZPqtzgINQbqqqj9qbHgPkbwgrzowCfMv6Ku1Tqn1CCcl8iA4858G-9GvcRhBFZaCpT9eRre3vaqWmVoq7HP-ACp6TlJVpI7hSWd7uof691rTUSn",
+              "verdict": "supporting",
+              "note": "Multiple current news sources report the death of Ayatollah Khamenei, stating it occurred during a joint US-Israeli air attack on Iran. Context: His death occurred during a joint US-Israeli air attack on Iran. Search query context: Ayatollah Khamenei dead 2026, Is Ayatollah Khamenei alive March"
+            },
+            {
+              "label": "washingtonpost.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8D6NbtEmJfqNphcYJe6LIrAofy9SO3bfDJAInk_JLV4GC5Zr4LSRg-Vc3Dqj-Ohct8x8jwF_7aA2ZaPgjM4uZk5MNSaFNrETXOMnBKow-xCebF-rmNwyJnPhLQrtEgU3LbW0SMcWUhkeHJPi9z9fWYYMUR7eYH9MFgNCjLQuW2CZCZhE4TlpxoCAyRyA=",
+              "verdict": "supporting",
+              "note": "Multiple current news sources report the death of Ayatollah Khamenei, stating it occurred during a joint US-Israeli air attack on Iran. Context: His death occurred during a joint US-Israeli air attack on Iran. Search query context: Ayatollah Khamenei dead 2026, Is Ayatollah Khamenei alive March"
+            },
+            {
+              "label": "caspiannews.com",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGclTxU2FXLjV8902O4-uIM5h2cMq45Iz5q6K3PV5FEZ3hfeK6oM4S9jjBiSqjlYVTszWeDne2PU8mzYA_3jRDZZr-jVLLzYEOBrfijJX0_lVC3GzlmObc_UOV-cWg7zywiOpJEzepUWdWwRrrzB0lk3RvY3pkEKwYo8UAKoKuoo8-NYb_zFS-G11gaPjDMe1eNLsckpRL427TiADwbgQ==",
+              "verdict": "supporting",
+              "note": "Multiple current news sources report the death of Ayatollah Khamenei, stating it occurred during a joint US-Israeli air attack on Iran. Context: His death occurred during a joint US-Israeli air attack on Iran. Search query context: Ayatollah Khamenei dead 2026, Is Ayatollah Khamenei alive March"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 92,
+          "note": "The source excerpt states that Ayatollah Khamenei is dead. This claim is strongly supported by multi"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 18653.88
+    }
+  }
+}

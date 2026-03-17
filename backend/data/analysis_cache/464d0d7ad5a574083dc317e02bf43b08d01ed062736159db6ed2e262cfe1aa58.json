@@ -1,0 +1,130 @@
+{
+  "key": "464d0d7ad5a574083dc317e02bf43b08d01ed062736159db6ed2e262cfe1aa58",
+  "created_at": 1773723916.986485,
+  "expires_at": 1773724816.986485,
+  "payload": {
+    "analysis": {
+      "trustScore": 93,
+      "manipulationLevel": "LOW",
+      "summary": "The provided content is a system message indicating that a media asset, specifically a WhatsApp video, has been uploaded for deepfake and scam screening. It describes an internal process rather than making an external factual claim or presenting news.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Recognize that this is a system-generated message about an internal process, not external content to be fact-checked.",
+        "Understand that the message itself is a record of an action taken by the system."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "Uploaded media asset named WhatsApp Video 2026-03-17 at 10.02.26 AM.mp4 for deepfake and scam screening.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 1",
+              "source": "Submitted Text",
+              "url": "",
+              "verdict": "supporting",
+              "note": "This claim is a direct statement from the source excerpt, describing an internal system action. Context: Uploaded media asset named WhatsApp Video 2026-03-17 at 10.02.26 AM.mp4 for deepfake and scam screening."
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 6 context passage(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 93,
+          "note": "The provided content is a system message indicating that a media asset, specifically a WhatsApp vide"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [
+        "A supporting claim lacks a top-tier citation but AI confidence is high."
+      ],
+      "live_doc_count": 0,
+      "citation_coverage": 1.0,
+      "failure_buckets": [
+        "citation_policy"
+      ],
+      "latency_ms": 29069.63
+    }
+  }
+}

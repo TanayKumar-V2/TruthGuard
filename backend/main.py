@@ -3,13 +3,14 @@ import time
 import asyncio
 import os
 from pathlib import Path
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+import aiofiles
 
 try:
     from dotenv import load_dotenv
@@ -27,6 +28,7 @@ logger = logging.getLogger(__name__)
 
 from monitoring import MetricsStore
 from ml.classifier import analyze_submission, get_engine
+from ml.video_processor import get_video_processor
 from ml.security import UnsafeUrlError
 
 # ---------------------------------------------------------------------------
@@ -122,10 +124,22 @@ async def analysis_worker(worker_id: int) -> None:
         try:
             tasks_store[task_id]["status"] = "processing"
             tasks_store[task_id]["attempts"] = job["attempt"] + 1
-            envelope = await asyncio.wait_for(
-                analyze_submission(text=job["text"], url=job["url"]),
-                timeout=ANALYSIS_TIMEOUT_SECONDS,
-            )
+            
+            if job.get("type") == "video":
+                video_processor = await get_video_processor()
+                envelope = await asyncio.wait_for(
+                    video_processor.analyze_video(job["file_path"]),
+                    timeout=ANALYSIS_TIMEOUT_SECONDS * 2, # Video takes longer
+                )
+                # Cleanup local video file
+                if os.path.exists(job["file_path"]):
+                    os.remove(job["file_path"])
+            else:
+                envelope = await asyncio.wait_for(
+                    analyze_submission(text=job["text"], url=job["url"]),
+                    timeout=ANALYSIS_TIMEOUT_SECONDS,
+                )
+            
             tasks_store[task_id].update(
                 {
                     "status": "completed",
@@ -149,6 +163,10 @@ async def analysis_worker(worker_id: int) -> None:
                 tasks_store[task_id].update({"status": "processing", "error": f"Retrying after transient error: {exc}"})
             else:
                 message = str(exc)
+                if not message:
+                    message = f"Analysis failed with {exc.__class__.__name__}."
+                if isinstance(exc, asyncio.TimeoutError):
+                    message = "Analysis timed out. The AI engine is currently overloaded or the content is too complex."
                 tasks_store[task_id].update({"status": "failed", "error": message})
                 METRICS.record_failure(
                     latency_ms=round((time.perf_counter() - started_at) * 1000, 2),
@@ -217,6 +235,47 @@ async def verify_endpoint(request: Request, body: VerifyRequest):
             "task_id": task_id,
             "text": body.text or "",
             "url": body.url or "",
+            "attempt": 0,
+        }
+    )
+    update_queue_metrics()
+    return {"task_id": task_id, "status": "processing"}
+
+@app.post("/verify-video")
+@limiter.limit("2/minute")
+async def verify_video_endpoint(request: Request, file: UploadFile = File(...)):
+    if not file.content_type.startswith("video/"):
+        raise HTTPException(status_code=400, detail="Only video files are supported.")
+    
+    if analysis_queue.full():
+        raise HTTPException(status_code=503, detail="Analysis queue is full. Retry shortly.")
+
+    task_id = str(uuid.uuid4())
+    temp_dir = Path(__file__).resolve().parent / "data" / "temp_videos"
+    temp_dir.mkdir(parents=True, exist_ok=True)
+    
+    file_path = temp_dir / f"{task_id}_{file.filename}"
+    
+    try:
+        async with aiofiles.open(file_path, 'wb') as out_file:
+            while content := await file.read(1024 * 1024):  # 1MB chunks
+                await out_file.write(content)
+    except Exception as e:
+        logger.error(f"Failed to save video file: {e}")
+        raise HTTPException(status_code=500, detail="Failed to save uploaded video.")
+
+    tasks_store[task_id] = {
+        "status": "processing",
+        "created_at": time.time(),
+        "attempts": 0,
+        "type": "video"
+    }
+    
+    analysis_queue.put_nowait(
+        {
+            "task_id": task_id,
+            "type": "video",
+            "file_path": str(file_path),
             "attempt": 0,
         }
     )

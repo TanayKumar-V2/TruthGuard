@@ -1,0 +1,196 @@
+{
+  "key": "00fc48dce647bbea8ccfd17e3788f245639d92639798711fe0e829d4926345cd",
+  "created_at": 1773694142.8459969,
+  "expires_at": 1773695042.8459969,
+  "payload": {
+    "analysis": {
+      "trustScore": 84,
+      "manipulationLevel": "LOW",
+      "summary": "A live news report from The Guardian detailing escalating tensions in the Middle East, specifically focusing on a conflict involving the US, Israel, and Iran, and the resulting diplomatic friction between the US and its European allies regarding the Strait of Hormuz.",
+      "education": "This analysis uses Gemini (gemini-3-flash-preview) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Cross-reference reports of military strikes with official government statements from multiple countries.",
+        "Check for corroboration from other major international news agencies like Reuters or AP.",
+        "Monitor official social media accounts of the US State Department and UK Foreign Office for policy shifts.",
+        "Pause before reacting to fear, outrage, or guilt-heavy wording and look for evidence."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 65,
+          "contribution": -65
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 40,
+          "contribution": -40
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 5,
+          "contribution": -5
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "European countries are resisting Trump's request for help in the Strait of Hormuz.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 1",
+              "source": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "url": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "verdict": "supporting",
+              "note": "The text explicitly states European countries reject calls for assistance. Context: Middle East crisis live: Trump vents frustration with allies as European countries resist demand for help in strait of Hormuz | US-Israel war on Iran "
+            },
+            {
+              "label": "Source passage 4",
+              "source": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "url": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "verdict": "supporting",
+              "note": "The text explicitly states European countries reject calls for assistance. Context: military targets' across Iran 4h ago Iran threatens to target US companies in the region 5h ago Iran war 'not a matter for Nato', says Germany's Merz "
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "UK Prime Minister Starmer stated the UK will not be drawn into a wider war.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 4",
+              "source": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "url": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "verdict": "supporting",
+              "note": "The live blog records Starmer's statement at the 9h ago mark. Context: military targets' across Iran 4h ago Iran threatens to target US companies in the region 5h ago Iran war 'not a matter for Nato', says Germany's Merz "
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "Iran has closed the Strait of Hormuz to the US, Israel, and their allies.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 5",
+              "source": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "url": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "verdict": "supporting",
+              "note": "The text reports Iran's statement regarding the closure of the strait. Context: trait of Hormuz is closed only to US, Israel and their allies 10h ago Greece will not engage in military operations in the strait of Hormuz, spokesper"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "The IDF has launched extensive strikes across Iran.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 5",
+              "source": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "url": "https://www.theguardian.com/world/live/2026/mar/16/iran-war-live-updates-news-oil-trump-hormuz-dubai-airport-israel-targets",
+              "verdict": "supporting",
+              "note": "The 11h ago update mentions the IDF's claim of extensive strikes. Context: trait of Hormuz is closed only to US, Israel and their allies 10h ago Greece will not engage in military operations in the strait of Hormuz, spokesper"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [
+        {
+          "tag": "Emotional Manipulation",
+          "severity": "medium",
+          "reason": "Content discusses war, displacement of a million people, and potential nuclear use, which are high-intensity topics.",
+          "matchedPhrases": [
+            "1 million people displaced",
+            "nuclear weapon"
+          ],
+          "learningNote": "Emotional manipulation pushes quick reactions before careful verification.",
+          "verificationStep": "Pause before reacting to fear, outrage, or guilt-heavy wording and look for evidence."
+        }
+      ],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 62,
+          "note": "Retrieved 10 context passage(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 84,
+          "note": "A live news report from The Guardian detailing escalating tensions in the Middle East, specifically "
+        }
+      ],
+      "extractedFromUrl": true
+    },
+    "metadata": {
+      "model_used": "gemini-3-flash-preview",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [
+        "A supporting claim lacks a top-tier citation but AI confidence is high."
+      ],
+      "live_doc_count": 0,
+      "citation_coverage": 1.0,
+      "failure_buckets": [
+        "citation_policy"
+      ],
+      "latency_ms": 34992.72
+    }
+  }
+}

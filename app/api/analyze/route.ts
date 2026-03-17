@@ -1,3 +1,5 @@
+export const maxDuration = 300; // Allow function to run for up to 5 minutes
+
 import { randomUUID } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import {
@@ -13,8 +15,8 @@ import {
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const backendBaseUrl =
   process.env.BACKEND_API_URL?.trim() || "http://127.0.0.1:8000";
-const TEXT_ANALYSIS_POLL_ATTEMPTS = 45;
-const URL_ANALYSIS_POLL_ATTEMPTS = 120;
+const TEXT_ANALYSIS_POLL_ATTEMPTS = 180;
+const URL_ANALYSIS_POLL_ATTEMPTS = 300;
 const ANALYSIS_POLL_INTERVAL_MS = 1000;
 
 const emptyFeedbackSummary: FeedbackSummary = {
@@ -111,6 +113,16 @@ function mapAnalysis(
     `Scam risk level: ${backend.scamRisk.level}`,
   ];
 
+  // Derive official source links from all evidence items containing a URL
+  const officialSourceLinks: AnalysisResult["officialSourceLinks"] = [];
+  for (const claimItem of claims) {
+    for (const ev of [...claimItem.supporting, ...claimItem.contradicting, ...claimItem.insufficient]) {
+      if (ev.url) {
+        officialSourceLinks.push({ label: ev.label, url: ev.url, source: ev.source });
+      }
+    }
+  }
+
   return {
     analysisId: randomUUID(),
     inputMode,
@@ -143,6 +155,7 @@ function mapAnalysis(
     },
     trustTimeline: mapTimeline(backend.trustTimeline),
     feedbackSummary: emptyFeedbackSummary,
+    officialSourceLinks,
     warnings: [],
   };
 }

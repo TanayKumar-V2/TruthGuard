@@ -14,7 +14,8 @@ import {
   ShieldAlert,
   Sparkles,
 } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   ANALYSIS_STEPS,
   CONSENSUS_TICKER,
@@ -23,7 +24,7 @@ import {
   trustTone,
   verdictTone,
 } from "@/components/truthguard/dashboard-data";
-import { AnalysisResult, ClaimEvidence } from "@/lib/analysis-types";
+import { AnalysisResult, ClaimEvidence, FlagInsight } from "@/lib/analysis-types";
 import { cn } from "@/lib/utils";
 
 interface AnalyzeApiResponse {
@@ -294,39 +295,165 @@ function EvidenceColumn({
       {items.length === 0 ? (
         <p className="text-sm text-slate-400">No signals surfaced in this lane.</p>
       ) : (
-        items.map((item) => (
-          <a
-            key={`${item.label}-${item.source}-${item.note}`}
-            href={item.url}
-            target="_blank"
-            rel="noreferrer"
-            className="block rounded-xl border border-white/10 bg-white/[0.03] p-3 transition hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-[0_16px_40px_rgba(34,211,238,0.1)]"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="text-sm font-semibold text-white">{item.label}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.22em] text-slate-500">
-                  {item.source}
-                </p>
+        items.map((item) => {
+          const Wrapper = item.url ? "a" : "div";
+          const wrapperProps = item.url
+            ? {
+                href: item.url,
+                target: "_blank",
+                rel: "noreferrer",
+                className:
+                  "block rounded-xl border border-white/10 bg-white/[0.03] p-3 transition hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-[0_16px_40px_rgba(34,211,238,0.1)] cursor-pointer",
+              }
+            : {
+                className: "block rounded-xl border border-white/10 bg-white/[0.03] p-3",
+              };
+
+          return (
+            <Wrapper key={`${item.label}-${item.source}-${item.note}`} {...wrapperProps}>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-white">{item.label}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.22em] text-cyan-400/80">
+                    {item.source}
+                  </p>
+                </div>
+                {item.url ? <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" /> : null}
               </div>
-              {item.url ? <ExternalLink className="mt-0.5 h-4 w-4 text-cyan-300" /> : null}
-            </div>
-            <p className="mt-2 text-sm leading-6 text-slate-300">{item.note}</p>
-          </a>
-        ))
+              <p className="mt-2 text-sm leading-6 text-slate-300">{item.note}</p>
+            </Wrapper>
+          );
+        })
       )}
     </div>
+  );
+}
+
+function FlagInsightsPanel({ insights }: { insights: FlagInsight[] }) {
+  const [activeTag, setActiveTag] = useState<string | null>(
+    insights[0]?.tag ?? null,
+  );
+
+  // Sync activeTag when insights prop changes (e.g. after a new analysis)
+  useEffect(() => {
+    if (insights.length > 0) {
+      setActiveTag(insights[0].tag);
+    } else {
+      setActiveTag(null);
+    }
+  }, [insights]);
+
+  const active = insights.find((i) => i.tag === activeTag) ?? null;
+
+  if (insights.length === 0) return null;
+
+  const severityStyle = (sev: FlagInsight["severity"]) => {
+    if (sev === "high") return "border-red-500/40 bg-red-500/15 text-red-200";
+    if (sev === "medium") return "border-amber-400/40 bg-amber-400/15 text-amber-100";
+    return "border-emerald-400/40 bg-emerald-400/15 text-emerald-200";
+  };
+
+  return (
+    <GlassPanel className="p-6 lg:p-7">
+      <SectionEyebrow
+        icon={<AlertTriangle className="h-3.5 w-3.5" />}
+        label="Why It Was Flagged — RAG Signal Breakdown"
+      />
+      {/* Tag pill selector */}
+      <div className="mb-6 flex flex-wrap gap-2">
+        {insights.map((insight) => (
+          <button
+            key={insight.tag}
+            type="button"
+            onClick={() => setActiveTag(insight.tag)}
+            className={cn(
+              "rounded-full border px-4 py-1.5 text-xs font-semibold transition",
+              activeTag === insight.tag
+                ? severityStyle(insight.severity)
+                : "border-white/10 bg-white/[0.04] text-slate-300 hover:border-cyan-400/30 hover:text-cyan-100",
+            )}
+          >
+            {insight.tag}
+          </button>
+        ))}
+      </div>
+
+      {/* Active insight detail card */}
+      {active && (
+        <div className="grid gap-5 xl:grid-cols-[1fr_1fr]">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="text-base font-bold text-white">{active.tag}</span>
+              <span
+                className={cn(
+                  "rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide",
+                  severityStyle(active.severity),
+                )}
+              >
+                {active.severity} severity
+              </span>
+            </div>
+            <div className="rounded-[22px] border border-white/10 bg-slate-950/60 p-4 text-sm leading-7 text-slate-300">
+              {active.reason}
+            </div>
+            {active.matchedPhrases.length > 0 && (
+              <div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                  Matched phrases
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {active.matchedPhrases.map((phrase) => (
+                    <span
+                      key={phrase}
+                      className="rounded-full border border-amber-400/25 bg-amber-400/10 px-3 py-1 text-xs text-amber-100"
+                    >
+                      {phrase}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="space-y-4">
+            <div className="rounded-[22px] border border-cyan-400/20 bg-cyan-400/[0.06] p-4">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">
+                Learning note
+              </div>
+              <p className="text-sm leading-7 text-slate-300">{active.learningNote}</p>
+            </div>
+            <div className="rounded-[22px] border border-indigo-400/20 bg-indigo-400/[0.06] p-4">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-300">
+                How to verify
+              </div>
+              <p className="text-sm leading-7 text-slate-300">{active.verificationStep}</p>
+            </div>
+          </div>
+        </div>
+      )}
+    </GlassPanel>
   );
 }
 
 function ClaimCard({
   claim,
   certifiedLinks,
+  flagInsights,
+  defaultOpen = false,
 }: {
   claim: ClaimEvidence;
   certifiedLinks: AnalysisResult["officialSourceLinks"];
+  flagInsights: FlagInsight[];
+  defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
+
+  // Sync open state if defaultOpen changes (important for new analysis results)
+  useEffect(() => {
+    setOpen(defaultOpen);
+  }, [defaultOpen]);
+
+  // Pick the most relevant insight for this claim
+  const relevantInsight = flagInsights[0] ?? null;
 
   return (
     <motion.article
@@ -373,9 +500,32 @@ function ClaimCard({
         </button>
       </div>
 
-      {open ? (
+      {open && relevantInsight ? (
+        <div className="mt-4 space-y-3 rounded-2xl border border-amber-400/20 bg-amber-400/[0.08] p-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-sm font-semibold text-amber-100">{relevantInsight.tag}</span>
+            <span className="rounded-full border border-amber-400/30 bg-amber-400/15 px-2 py-0.5 text-xs text-amber-200 uppercase tracking-wide">
+              {relevantInsight.severity}
+            </span>
+          </div>
+          <p className="text-sm leading-6 text-amber-50">{relevantInsight.reason}</p>
+          {relevantInsight.matchedPhrases.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {relevantInsight.matchedPhrases.map((phrase) => (
+                <span key={phrase} className="rounded-full border border-amber-400/25 bg-amber-900/40 px-2.5 py-1 text-xs text-amber-100">
+                  {phrase}
+                </span>
+              ))}
+            </div>
+          )}
+          <p className="border-t border-amber-400/10 pt-3 text-xs leading-6 text-amber-200/80">
+            <span className="font-semibold">How to verify: </span>
+            {relevantInsight.verificationStep}
+          </p>
+        </div>
+      ) : open ? (
         <div className="mt-4 rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4 text-sm leading-6 text-amber-50">
-          TruthGuard flagged this claim because its evidence pattern shows either contradiction pressure, missing sourcing, or persuasive framing. The educational check is to separate the factual statement from emotional packaging, then verify it through the primary source or a fact-check review.
+          TruthGuard flagged this claim because its evidence pattern shows either contradiction pressure, missing sourcing, or persuasive framing.
         </div>
       ) : null}
     </motion.article>
@@ -555,14 +705,21 @@ function ConsensusTicker() {
 }
 
 export function TruthGuardDashboard() {
-  const [urlInput, setUrlInput] = useState("");
-  const [textInput, setTextInput] = useState("");
+  const searchParams = useSearchParams();
+  const initialUrl = searchParams.get("url") || "";
+  const initialText = searchParams.get("text") || "";
+  
+  const [urlInput, setUrlInput] = useState(initialUrl);
+  const [textInput, setTextInput] = useState(initialText);
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  
+  // Track if we've already handled the auto-analysis on mount to prevent double firing
+  const hasAutoAnalyzed = useRef(false);
 
   useEffect(() => {
     if (!uploadedFile || !uploadedFile.type.startsWith("image/")) {
@@ -576,12 +733,11 @@ export function TruthGuardDashboard() {
   }, [uploadedFile]);
 
   const canAnalyze = Boolean(textInput.trim() || urlInput.trim() || uploadedFile) && !isAnalyzing;
-  const certifiedLinks =
-    analysis?.officialSourceLinks.filter((link) =>
-      ["Alt News", "BOOM", "PIB Fact Check"].some((name) => link.source.includes(name)),
-    ) ??
-    analysis?.officialSourceLinks ??
-    [];
+  const officialLinks = analysis?.officialSourceLinks ?? [];
+  const certifiedLinksMatch = officialLinks.filter((link) =>
+    ["Alt News", "BOOM", "PIB Fact Check"].some((name) => link.source.includes(name)),
+  );
+  const certifiedLinks = certifiedLinksMatch.length > 0 ? certifiedLinksMatch : officialLinks;
   const verdict = analysis ? verdictTone(analysis) : null;
 
   async function runPipeline() {
@@ -591,7 +747,7 @@ export function TruthGuardDashboard() {
     }
   }
 
-  async function handleAnalyze() {
+  const handleAnalyze = useCallback(async () => {
     if (!canAnalyze) return;
 
     setIsAnalyzing(true);
@@ -630,7 +786,20 @@ export function TruthGuardDashboard() {
       setIsAnalyzing(false);
       setActiveStepIndex(0);
     }
-  }
+  }, [textInput, urlInput, uploadedFile, canAnalyze]);
+
+  useEffect(() => {
+    if (!hasAutoAnalyzed.current && (initialUrl || initialText)) {
+      hasAutoAnalyzed.current = true;
+      // Slight delay to allow UI to mount before starting heavy sequence
+      const timer = setTimeout(() => {
+        if (!isAnalyzing) {
+          handleAnalyze();
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [initialUrl, initialText, handleAnalyze, isAnalyzing]);
 
   return (
     <main className="relative overflow-hidden pb-28">
@@ -756,9 +925,43 @@ export function TruthGuardDashboard() {
           </motion.section>
           {analysis ? (
             <motion.section variants={containerVariants} initial="hidden" animate="show" className="space-y-8">
+              <motion.div variants={itemVariants}>
+                <FlagInsightsPanel insights={analysis.flagInsights} />
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <GlassPanel className="p-6 lg:p-7">
+                  <SectionEyebrow icon={<Sparkles className="h-3.5 w-3.5" />} label="Forensic Evidence & Claim Breakdown" />
+                  <div className="mt-8 space-y-8">
+                    {analysis.claimEvidence.length > 0 ? (
+                      analysis.claimEvidence.map((claim, idx) => (
+                        <ClaimCard
+                          key={claim.claim}
+                          claim={claim}
+                          certifiedLinks={certifiedLinks}
+                          flagInsights={analysis.flagInsights}
+                          defaultOpen={idx === 0 && (claim.verdict === "contradicting" || analysis.trustScore < 60)}
+                        />
+                      ))
+                    ) : (
+                      <div className="rounded-2xl border border-white/5 bg-slate-950/40 p-12 text-center text-slate-400">
+                        No distinct claims were extracted for deeper evidence matching.
+                      </div>
+                    )}
+                  </div>
+                </GlassPanel>
+              </motion.div>
+
               <motion.div variants={itemVariants} className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
                 <GlassPanel className="p-6 lg:p-7">
                   <SectionEyebrow icon={<Shield className="h-3.5 w-3.5" />} label="Trust Matrix" />
+                  <div className="mb-8 rounded-[24px] border border-cyan-400/20 bg-cyan-400/[0.04] p-6 lg:p-8">
+                    <div className="mb-4 flex items-center gap-3">
+                      <Sparkles className="h-5 w-5 text-cyan-300" />
+                      <h2 className="text-xl font-bold text-white">AI Verdict & Summary</h2>
+                    </div>
+                    <p className="text-base leading-8 text-slate-200">{analysis.summary}</p>
+                  </div>
                   <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
                     <div className="flex flex-col items-center justify-center gap-5">
                       <TrustDial score={analysis.trustScore} />
@@ -780,8 +983,7 @@ export function TruthGuardDashboard() {
                         <ManipulationBars analysis={analysis} />
                       </div>
                       <div className="rounded-[24px] border border-white/10 bg-slate-950/60 p-5">
-                        <div className="text-sm font-semibold text-white">Explainable summary</div>
-                        <p className="mt-3 text-sm leading-7 text-slate-300">{analysis.summary}</p>
+                        <div className="text-sm font-semibold text-white">Content Fingerprint Tags</div>
                         <div className="mt-4 flex flex-wrap gap-2">
                           {analysis.tags.map((tag) => (
                             <span key={tag} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-300">
@@ -808,17 +1010,6 @@ export function TruthGuardDashboard() {
 
                   <SimulatorWidget />
                 </div>
-              </motion.div>
-
-              <motion.div variants={itemVariants}>
-                <GlassPanel className="p-6 lg:p-7">
-                  <SectionEyebrow icon={<Sparkles className="h-3.5 w-3.5" />} label="Explainable AI and Claim Evidence" />
-                  <div className="mt-8 space-y-8">
-                    {analysis.claimEvidence.map((claim) => (
-                      <ClaimCard key={claim.claim} claim={claim} certifiedLinks={certifiedLinks} />
-                    ))}
-                  </div>
-                </GlassPanel>
               </motion.div>
 
               <motion.div variants={itemVariants}>

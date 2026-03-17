@@ -1,0 +1,148 @@
+{
+  "key": "4448189438b4d62ec8decfd155de94f1e1e78297fc3c5b5dd86e1adf67c3444f",
+  "created_at": 1773698616.0551393,
+  "expires_at": 1773699516.0551393,
+  "payload": {
+    "analysis": {
+      "trustScore": 43,
+      "manipulationLevel": "MEDIUM",
+      "summary": "The source provides an extremely vague and unsourced assertion regarding a situation between Iran and Israel without any specific details, dates, or context.",
+      "education": "This analysis uses Gemini (gemini-3-flash-preview) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Consult reputable international news agencies such as Reuters, AP, or BBC for current geopolitical updates.",
+        "Look for official statements from the respective governments or international bodies like the UN.",
+        "Check for specific details such as locations, dates, and the nature of the 'ongoing' event (e.g., diplomatic talks, sports, or conflict).",
+        "Look for named sources, primary documents, and precise attribution.",
+        "Cross-check the claim with at least two reputable or primary sources."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 85,
+          "contribution": -85
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 65,
+          "contribution": -65
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 15,
+          "contribution": -15
+        },
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 15,
+          "contribution": 15
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 5,
+          "contribution": -5
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "iran vs israel is going on",
+          "verdict": "insufficient",
+          "supporting": [],
+          "contradicting": [],
+          "insufficient": [
+            {
+              "label": "Gemini RAG Assessment",
+              "source": "Gemini RAG (gemini-3-flash-preview) + live web + ChromaDB",
+              "url": "",
+              "verdict": "insufficient",
+              "note": "The provided context contains no information regarding current events or conflicts between Iran and Israel as of March 2026 to verify this claim."
+            }
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "tag": "Unverified Language",
+          "severity": "medium",
+          "reason": "The phrase 'is going on' is highly imprecise and fails to define the nature of the event or provide any concrete details.",
+          "matchedPhrases": [
+            "is going on"
+          ],
+          "learningNote": "Vague claims like 'experts say' or 'people are saying' weaken credibility.",
+          "verificationStep": "Look for named sources, primary documents, and precise attribution."
+        },
+        {
+          "tag": "Missing Source",
+          "severity": "high",
+          "reason": "A significant geopolitical claim is made without any attribution, links, or references to primary sources or news outlets.",
+          "matchedPhrases": [],
+          "learningNote": "Credible reporting is traceable. Missing sourcing makes claims harder to trust.",
+          "verificationStep": "Cross-check the claim with at least two reputable or primary sources."
+        }
+      ],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 49,
+          "note": "Retrieved 6 context passage(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 43,
+          "note": "The source provides an extremely vague and unsourced assertion regarding a situation between Iran an"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-3-flash-preview",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 0,
+      "citation_coverage": 0.0,
+      "failure_buckets": [],
+      "latency_ms": 20939.55
+    }
+  }
+}

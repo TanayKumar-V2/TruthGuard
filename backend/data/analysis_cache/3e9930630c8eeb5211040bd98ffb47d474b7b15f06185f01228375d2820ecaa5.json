@@ -1,0 +1,130 @@
+{
+  "key": "3e9930630c8eeb5211040bd98ffb47d474b7b15f06185f01228375d2820ecaa5",
+  "created_at": 1773698997.3286724,
+  "expires_at": 1773699897.3286724,
+  "payload": {
+    "analysis": {
+      "trustScore": 93,
+      "manipulationLevel": "LOW",
+      "summary": "The source excerpt is a neutral, technical status update regarding a bug fix in the TruthGuard backend. It contains no indicators of manipulation, emotional framing, or scam risk.",
+      "education": "This analysis uses Gemini (gemini-3-flash-preview) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Verify the status in the internal development issue tracker.",
+        "Check the backend repository's commit history for TypedDict-related changes."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 95,
+          "contribution": 95
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "Verifying the fix for TypedDict error in TruthGuard backend.",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "Source passage 1",
+              "source": "Submitted Text",
+              "url": "",
+              "verdict": "supporting",
+              "note": "The source text directly states this technical verification is occurring. Context: Verifying the fix for TypedDict error in TruthGuard backend."
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 64,
+          "note": "Retrieved 6 context passage(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 93,
+          "note": "The source excerpt is a neutral, technical status update regarding a bug fix in the TruthGuard backe"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-3-flash-preview",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [
+        "A supporting claim lacks a top-tier citation but AI confidence is high."
+      ],
+      "live_doc_count": 0,
+      "citation_coverage": 1.0,
+      "failure_buckets": [
+        "citation_policy"
+      ],
+      "latency_ms": 12289.16
+    }
+  }
+}

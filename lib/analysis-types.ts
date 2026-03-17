@@ -69,6 +69,12 @@ export interface FeedbackRecord {
   createdAt: string;
 }
 
+export interface OfficialSourceLink {
+  label: string;
+  url: string;
+  source: string;
+}
+
 export interface AnalysisResult {
   analysisId: string;
   inputMode: "text" | "url" | "hybrid";
@@ -87,5 +93,6 @@ export interface AnalysisResult {
   scamRisk: ScamRiskAnalysis;
   trustTimeline: TrustTimelinePoint[];
   feedbackSummary: FeedbackSummary;
+  officialSourceLinks: OfficialSourceLink[];
   warnings: string[];
 }
