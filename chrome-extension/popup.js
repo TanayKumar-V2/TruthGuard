@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('scan-page-btn');
-  const TRUTHGUARD_URL = "http://localhost:3000";
+  const TRUTHGUARD_URL = "https://truth-guard-opal.vercel.app";
 
   btn.addEventListener('click', () => {
     // Get the active tab's URL
