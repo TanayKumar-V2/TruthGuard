@@ -21,13 +21,6 @@ export default function LoginPage() {
     }
   };
 
-  const handleBypass = () => {
-    setIsLoading(true);
-    // Simulate a successful login for development testing
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 1500);
-  };
 
   return (
     <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 px-4">
@@ -85,18 +78,6 @@ export default function LoginPage() {
                 />
               </div>
             </div>
-
-            <button 
-              onClick={handleBypass}
-              disabled={isLoading}
-              className="relative w-full h-14 group overflow-hidden rounded-2xl bg-white font-bold text-slate-950 transition-all hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-white/50 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-100%] group-hover:translate-x-[100%] duration-1000" />
-              <span className="relative z-10 flex items-center justify-center gap-2 text-sm uppercase tracking-widest">
-                {isLoading ? "Bypassing Security..." : "Bypass & Enter Dashboard"}
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </button>
 
             <div className="relative flex items-center py-2">
               <div className="flex-grow border-t border-white/5"></div>
