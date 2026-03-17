@@ -36,3 +36,4 @@
 {"timestamp": 1773723754.008394, "kind": "success", "latency_ms": 7152.83, "model_used": "gemini-2.5-flash", "degraded": false, "cache_hit": false, "trust_band": "medium", "flags": ["Unverified Language"], "error_buckets": []}
 {"timestamp": 1773723774.9916036, "kind": "success", "latency_ms": 4908.88, "model_used": "gemini-2.5-flash", "degraded": false, "cache_hit": false, "trust_band": "medium", "flags": ["Unverified Language"], "error_buckets": []}
 {"timestamp": 1773723917.0078452, "kind": "success", "latency_ms": 29069.63, "model_used": "gemini-2.5-flash", "degraded": false, "cache_hit": false, "trust_band": "high", "flags": [], "error_buckets": []}
+{"timestamp": 1773724930.061824, "kind": "success", "latency_ms": 30402.84, "model_used": "gemini-2.5-flash", "degraded": false, "cache_hit": false, "trust_band": "high", "flags": ["Sensationalism"], "error_buckets": []}

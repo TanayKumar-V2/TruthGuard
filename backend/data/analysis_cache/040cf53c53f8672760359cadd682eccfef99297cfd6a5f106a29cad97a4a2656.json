@@ -1,0 +1,181 @@
+{
+  "key": "040cf53c53f8672760359cadd682eccfef99297cfd6a5f106a29cad97a4a2656",
+  "created_at": 1773724930.040962,
+  "expires_at": 1773725830.040962,
+  "payload": {
+    "analysis": {
+      "trustScore": 70,
+      "manipulationLevel": "LOW",
+      "summary": "The source excerpt states that Iran could take action against Gulf allies and that intelligence agencies had alerted Trump. The retrieved context supports these claims, clarifying that American intelligence assessments had warned President Donald Trump that an attack on Iran could lead to retaliatory action against American allies in the Gulf. The excerpt uses a sensational tone.",
+      "education": "This analysis uses Gemini (gemini-2.5-flash) with retrieval-augmented generation over live web grounding and a Chroma vector database. Submitted content, current grounded search results, and a verification knowledge base are retrieved before Gemini scores credibility and manipulation patterns. Results are probabilistic and should guide verification, not replace it.",
+      "verificationTips": [
+        "Verify the specific context of Iran's potential actions, particularly whether they are described as retaliatory or unprovoked.",
+        "Cross-reference the intelligence warnings to the US President regarding Iran with multiple reputable news sources.",
+        "Be wary of dramatic or exaggerated language that lacks supporting evidence."
+      ],
+      "scoreBreakdown": [
+        {
+          "category": "Factual / Credible Content",
+          "impact": "positive",
+          "scoreValue": 75,
+          "contribution": 75
+        },
+        {
+          "category": "Sensationalism",
+          "impact": "negative",
+          "scoreValue": 60,
+          "contribution": -60
+        },
+        {
+          "category": "Clickbait",
+          "impact": "negative",
+          "scoreValue": 50,
+          "contribution": -50
+        },
+        {
+          "category": "Emotional Manipulation",
+          "impact": "negative",
+          "scoreValue": 40,
+          "contribution": -40
+        },
+        {
+          "category": "Unverified Language",
+          "impact": "negative",
+          "scoreValue": 20,
+          "contribution": -20
+        },
+        {
+          "category": "Missing Source",
+          "impact": "negative",
+          "scoreValue": 10,
+          "contribution": -10
+        },
+        {
+          "category": "Urgency / Pressure Tactics",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        },
+        {
+          "category": "Financial Scam Risk",
+          "impact": "negative",
+          "scoreValue": 0,
+          "contribution": 0
+        }
+      ],
+      "scamRisk": {
+        "active": false,
+        "level": "LOW",
+        "score": 0,
+        "categories": [],
+        "indicators": [],
+        "actions": []
+      },
+      "extractedClaims": [
+        {
+          "claim": "खाड़ी सहयोगियों के खिलाफ कार्रवाई कर सकता है ईरान!",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "indiatoday.in",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnl-Q2BFeNQuuNQYmqOeDg0vf0KdCwN_OY7C0nz0-Kv5uohRmOBapkHWlnbem2N2zwSULnpqYtX9fk49yCuFjfGy9cAMZchjY3YCAlRhEbeA3MNsLaY8iWVOjxc3wZjEAc7plMk4sVYH8ynx1Q0-A9p3ddMUpZUNuZMMreX01DVPQAQh3QBZqS-tz79NcR8GEfG0a32h0i9tIOMkDtzqwJNHFzuJLOLZTqiduReZQGLfSs5IBrE7MXPuvNShaiRfcbBIdmRA==",
+              "verdict": "supporting",
+              "note": "The retrieved context indicates this action would be retaliatory in response to an attack on Iran. Context: ईरान ने कतर, सऊदी अरब, संयुक्त अरब अमीरात, बहरीन और कुवैत में ठिकानों को निशाना बनाते हुए ड्रोन और मिसाइल हमले किए हैं. अमेरिकी खुफिया आकलन ने राष्ट्र"
+            },
+            {
+              "label": "adaderana.lk",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH23C6QvB1bZJEQNWwEHhGmQBh9VdgTMTa9ilkE9RBAhCsfJxwI0fSlH9i_83gMcHxmSf4CPL5BFNgJKA6ncqKQauoAPxo0YibefLdL6E23isgHgprAqolziG1WhP_7pTJvHx7QAt0=",
+              "verdict": "supporting",
+              "note": "The retrieved context indicates this action would be retaliatory in response to an attack on Iran. Context: ईरान ने कतर, सऊदी अरब, संयुक्त अरब अमीरात, बहरीन और कुवैत में ठिकानों को निशाना बनाते हुए ड्रोन और मिसाइल हमले किए हैं. अमेरिकी खुफिया आकलन ने राष्ट्र"
+            },
+            {
+              "label": "aajtak.in",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB1eZJ3BKenmF7RKujeX4uExMQIWuFt7ujU0RK4jxlM9jLO1LDu1IYvZ1zDvy2We3CXWNHWfxqkcj27rB4cGWGsBKEvjbX00w5FvAA4vmVfMbF4x_7teABOLL_RAYkWALOCRVSYYdV-_uhUJ6aL3ysTuH2nza9MCP1f3qZnp1P-tpuqKvDyFu5XPbRbBUQ-8tx-45J0TexnHFBz-_-LLweWZjlgWuVwxV8gyJ0g1ynthWAS8BzeUzmabv4Upm5h7FjeidycIMpzBy9d8NR4OGytw==",
+              "verdict": "supporting",
+              "note": "The retrieved context indicates this action would be retaliatory in response to an attack on Iran. Context: ईरान ने कतर, सऊदी अरब, संयुक्त अरब अमीरात, बहरीन और कुवैत में ठिकानों को निशाना बनाते हुए ड्रोन और मिसाइल हमले किए हैं. अमेरिकी खुफिया आकलन ने राष्ट्र"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        },
+        {
+          "claim": "खुफिया एजेंसियों ने ट्रंप को किया था अलर्ट",
+          "verdict": "supporting",
+          "supporting": [
+            {
+              "label": "indiatoday.in",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnl-Q2BFeNQuuNQYmqOeDg0vf0KdCwN_OY7C0nz0-Kv5uohRmOBapkHWlnbem2N2zwSULnpqYtX9fk49yCuFjfGy9cAMZchjY3YCAlRhEbeA3MNsLaY8iWVOjxc3wZjEAc7plMk4sVYH8ynx1Q0-A9p3ddMUpZUNuZMMreX01DVPQAQh3QBZqS-tz79NcR8GEfG0a32h0i9tIOMkDtzqwJNHFzuJLOLZTqiduReZQGLfSs5IBrE7MXPuvNShaiRfcbBIdmRA==",
+              "verdict": "supporting",
+              "note": "American intelligence assessments had warned President Donald Trump about potential retaliatory action by Iran. Context: ईरान ने कतर, सऊदी अरब, संयुक्त अरब अमीरात, बहरीन और कुवैत में ठिकानों को निशाना बनाते हुए ड्रोन और मिसाइल हमले किए हैं. अमेरिकी खुफिया आकलन ने राष्ट्र"
+            },
+            {
+              "label": "adaderana.lk",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH23C6QvB1bZJEQNWwEHhGmQBh9VdgTMTa9ilkE9RBAhCsfJxwI0fSlH9i_83gMcHxmSf4CPL5BFNgJKA6ncqKQauoAPxo0YibefLdL6E23isgHgprAqolziG1WhP_7pTJvHx7QAt0=",
+              "verdict": "supporting",
+              "note": "American intelligence assessments had warned President Donald Trump about potential retaliatory action by Iran. Context: ईरान ने कतर, सऊदी अरब, संयुक्त अरब अमीरात, बहरीन और कुवैत में ठिकानों को निशाना बनाते हुए ड्रोन और मिसाइल हमले किए हैं. अमेरिकी खुफिया आकलन ने राष्ट्र"
+            },
+            {
+              "label": "aajtak.in",
+              "source": "vertexaisearch.cloud.google.com",
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB1eZJ3BKenmF7RKujeX4uExMQIWuFt7ujU0RK4jxlM9jLO1LDu1IYvZ1zDvy2We3CXWNHWfxqkcj27rB4cGWGsBKEvjbX00w5FvAA4vmVfMbF4x_7teABOLL_RAYkWALOCRVSYYdV-_uhUJ6aL3ysTuH2nza9MCP1f3qZnp1P-tpuqKvDyFu5XPbRbBUQ-8tx-45J0TexnHFBz-_-LLweWZjlgWuVwxV8gyJ0g1ynthWAS8BzeUzmabv4Upm5h7FjeidycIMpzBy9d8NR4OGytw==",
+              "verdict": "supporting",
+              "note": "American intelligence assessments had warned President Donald Trump about potential retaliatory action by Iran. Context: ईरान ने कतर, सऊदी अरब, संयुक्त अरब अमीरात, बहरीन और कुवैत में ठिकानों को निशाना बनाते हुए ड्रोन और मिसाइल हमले किए हैं. अमेरिकी खुफिया आकलन ने राष्ट्र"
+            }
+          ],
+          "contradicting": [],
+          "insufficient": []
+        }
+      ],
+      "flags": [
+        {
+          "tag": "Sensationalism",
+          "severity": "low",
+          "reason": "The use of an exclamation mark and a strong, unnuanced statement creates a sensational tone.",
+          "matchedPhrases": [
+            "खाड़ी सहयोगियों के खिलाफ कार्रवाई कर सकता है ईरान!"
+          ],
+          "learningNote": "Sensationalist content exaggerates facts to provoke strong reactions.",
+          "verificationStep": "Be wary of dramatic or exaggerated language that lacks supporting evidence."
+        }
+      ],
+      "trustTimeline": [
+        {
+          "label": "Baseline",
+          "step": "Submission",
+          "score": 50,
+          "note": "Starting point before Gemini retrieval and scoring."
+        },
+        {
+          "label": "After Retrieval",
+          "step": "RAG Context",
+          "score": 58,
+          "note": "Retrieved 10 context passage(s), including 4 grounded live web source(s)."
+        },
+        {
+          "label": "Final Verdict",
+          "step": "Complete",
+          "score": 70,
+          "note": "The source excerpt states that Iran could take action against Gulf allies and that intelligence agen"
+        }
+      ],
+      "extractedFromUrl": false
+    },
+    "metadata": {
+      "model_used": "gemini-2.5-flash",
+      "fallback_count": 0,
+      "cache_hit": false,
+      "degraded": false,
+      "degraded_reason": "",
+      "warnings": [],
+      "live_doc_count": 4,
+      "citation_coverage": 1.0,
+      "failure_buckets": [],
+      "latency_ms": 30402.84
+    }
+  }
+}
